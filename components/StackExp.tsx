@@ -2,7 +2,7 @@ import React from 'react'
 
 const StackExp = () => {
   return (
-		<div className="flex flex-col h-screen w-full">
+		<div className="flex flex-col h-screen w-full snap-center">
 			<div className="font-primary text-white text-6xl mt-10">
 				<span className="text-(--grey)">Tech</span> Stack
 			</div>

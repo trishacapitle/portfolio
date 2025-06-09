@@ -4,7 +4,7 @@ import GithubIcon from "./ui/GithubIcon";
 
 const Contact = () => {
 	return (
-		<div className="flex h-screen w-full">
+		<div className="flex h-screen w-full snap-center">
 			<div className="font-primary text-white mt-10">
 				<div className="text-6xl">
 					<span className="text-(--grey)">Let&apos;s</span> Connect
