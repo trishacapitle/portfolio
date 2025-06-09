@@ -6,51 +6,65 @@ import * as motion from "motion/react-client";
 import Spline from "@splinetool/react-spline/next";
 
 const Hero = () => {
-
 	return (
 		<div className={`flex h-full w-full snap-center`}>
 			<div className="flex flex-col flex-1 justify-center">
 				<motion.div
 					initial={{ opacity: 0, y: 16 }}
-					animate={{ opacity: 1 }}
-					transition={{ ease: "easeIn", duration: 1 }}
+					animate={{ opacity: 1, y: 0 }}
+					transition={{ ease: "easeIn", duration: 1.5 }}
 					className="text-white font-primary text-5xl"
 				>
 					Hi, I&apos;m
 				</motion.div>
 				<motion.div
-					initial={{ opacity: 0 }}
-					animate={{ opacity: 1 }}
-					transition={{ ease: "easeIn", duration: 1 }}
-					className="text-white font-primary text-8xl tracking-wide relative"
+					initial={{ opacity: 0, y: 16 }}
+					animate={{ opacity: 1, y: 0 }}
+					transition={{ ease: "easeIn", duration: 1.5 }}
+					className="text-white font-primary text-8xl tracking-wide relative flex"
 				>
 					<motion.div
-						initial={{ opacity: 0, x: 70, y: -8, rotate: -10 }}
-						animate={{ opacity: 1, x: 70, y: -15, rotate: -10 }}
-						transition={{
-							delay: 3,
-							type: "spring",
-							bounce: 0.5,
-							duration: 1.5,
-						}}
-						className="text-white font-primary text-8xl tracking-wide absolute z-99"
-					>
-						ASHI
-					</motion.div>
-					<motion.span
 						initial={{ opacity: 1 }}
-						animate={{ opacity: 0.4 }}
+						animate={{ opacity: 0 }}
 						transition={{ delay: 3, duration: 1.5, ease: "easeIn" }}
-						className="text-(--grey) "
+						className="text-(--grey)"
 					>
-						TRISHA
-					</motion.span>{" "}
+						TRI
+					</motion.div>
+					<motion.div
+						animate={{ color: "#fff" }}
+						transition={{ delay: 3, duration: 1.5, ease: "easeInOut" }}
+						className="text-(--grey)"
+					>
+						S
+					</motion.div>
+					<motion.div
+						animate={{ color: "#fff" }}
+						transition={{ delay: 3, duration: 1.5, ease: "easeInOut" }}
+						className="text-(--grey)"
+					>
+						H
+					</motion.div>
+					<motion.div
+						animate={{ x: -120, color: "#fff" }}
+						transition={{ delay: 3, duration: 1.5, ease: "easeInOut" }}
+						className="text-(--grey)"
+					>
+						A
+					</motion.div>
+				</motion.div>{" "}
+				<motion.div
+					initial={{ opacity: 0, y: 16 }}
+					animate={{ opacity: 1, y: 0 }}
+					transition={{ duration: 1.5, ease: "easeIn" }}
+					className="text-white font-primary text-8xl tracking-wide"
+				>
 					CAPITLE
 				</motion.div>
 				<motion.div
-					initial={{ opacity: 0 }}
-					animate={{ opacity: 1 }}
-					transition={{ ease: "easeIn", duration: 1 }}
+					initial={{ opacity: 0, x: -160 }}
+					animate={{ opacity: 1, x: 0 }}
+					transition={{ ease: "easeIn", duration: 1.5 }}
 					className="text-white font-secondary font-normal text-xl"
 				>
 					A Front-End Developer crafting modern, responsive websites with clean,
@@ -59,9 +73,9 @@ const Hero = () => {
 					development.
 				</motion.div>
 				<motion.div
-					initial={{ opacity: 0, y: 16 }}
-					animate={{ opacity: 1 }}
-					transition={{ ease: "easeIn", duration: 1 }}
+					initial={{ opacity: 0, x: -160 }}
+					animate={{ opacity: 1, x: 0 }}
+					transition={{ ease: "easeIn", duration: 1.5 }}
 					className="flex mt-4 items-center gap-6"
 				>
 					<motion.button
@@ -72,16 +86,22 @@ const Hero = () => {
 						Contact Me
 						<ContactIcon width="25" height="25" />
 					</motion.button>
-					<a
+					<motion.a
+						whileHover={{ scale: 1.2 }}
+						whileTap={{ scale: 0.9 }}
 						href="https://www.linkedin.com/in/trisha-capitle/"
 						target="_blank"
-						rel="noopener noreferrer"
 					>
 						<LinkedInIcon width="40" height="40" />
-					</a>
-					<a href="github.com/trishacapitle" target="_blank">
+					</motion.a>
+					<motion.a
+						whileHover={{ scale: 1.2 }}
+						whileTap={{ scale: 0.9 }}
+						href="github.com/trishacapitle"
+						target="_blank"
+					>
 						<GithubIcon width="40" height="40" />
-					</a>
+					</motion.a>
 				</motion.div>
 			</div>
 			<div className="flex flex-1 items-center relative">
