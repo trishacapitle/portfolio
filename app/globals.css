@@ -15,3 +15,7 @@
 	--fw-semibold: 600;
 	--fw-bold: 700;
 }
+
+@utility no-scrollbar {
+  @apply [scrollbar-width:none] [&::-webkit-scrollbar]:hidden;
+}
