@@ -6,17 +6,18 @@ import { BiLogoLinkedinSquare, BiLogoGithub, BiPaperPlane } from "react-icons/bi
 const Hero = () => {
 
 	return (
-		<div className="flex h-full w-full snap-center relative">
-			<div className="flex flex-col flex-1 justify-center ml-4 z-10">
+		<div className="flex flex-col md:flex-row h-full w-full snap-center">
+			
+			<div className="flex flex-col flex-1 justify-center m-4 md:p-6 z-10">
 				<motion.div
 					initial={{ opacity: 0, y: 16 }}
 					animate={{ opacity: 1, y: 0 }}
 					transition={{ ease: "easeIn", duration: 1.5 }}
-					className="text-white font-primary text-5xl"
+					className="text-white font-primary text-3xl md:text-5xl"
 				>
 					Hi, I&apos;m
 				</motion.div>
-				<div className="flex gap-2">
+				<div className="flex gap-0 md:gap-2 flex-col md:flex-row">
 					<motion.div
 						initial={{ opacity: 0, y: 16 }}
 						animate={{ opacity: 1, y: 0 }}
@@ -28,11 +29,8 @@ const Hero = () => {
 							animate={{ opacity: 0 }}
 							transition={{
 								delay: 3,
-								duration: 1.5,
-								ease: "easeIn",
-								repeat: Infinity,
-								repeatType: "reverse",
-								repeatDelay: 2,
+								duration: 1,
+								ease: "easeIn"
 							}}
 							className="text-(--grey)"
 						>
@@ -41,12 +39,9 @@ const Hero = () => {
 						<motion.div
 							animate={{ color: "#fff" }}
 							transition={{
-								delay: 3,
+								delay: 4,
 								duration: 1.5,
-								ease: "easeInOut",
-								repeat: Infinity,
-								repeatType: "reverse",
-								repeatDelay: 2,
+								ease: "easeInOut"
 							}}
 							className="text-(--grey)"
 						>
@@ -55,12 +50,9 @@ const Hero = () => {
 						<motion.div
 							animate={{ color: "#fff" }}
 							transition={{
-								delay: 3,
+								delay: 4,
 								duration: 1.5,
-								ease: "easeInOut",
-								repeat: Infinity,
-								repeatType: "reverse",
-								repeatDelay: 2,
+								ease: "easeInOut"
 							}}
 							className="text-(--grey)"
 						>
@@ -70,11 +62,8 @@ const Hero = () => {
 							animate={{ x: -120, color: "#fff" }}
 							transition={{
 								delay: 3,
-								duration: 1.5,
-								ease: "easeInOut",
-								repeat: Infinity,
-								repeatType: "reverse",
-								repeatDelay: 2,
+								duration: 1,
+								ease: "easeInOut"
 							}}
 							className="text-(--grey)"
 						>
@@ -94,7 +83,7 @@ const Hero = () => {
 					initial={{ opacity: 0, y: 16 }}
 					animate={{ opacity: 1, y: 0 }}
 					transition={{ ease: "easeIn", duration: 1.5 }}
-					className="text-white font-secondary font-normal text-xl"
+					className="text-white font-secondary font-normal text-base md:text-xl"
 				>
 					A Front-End Developer crafting modern, responsive websites with clean,
 					efficient code, and intuitive design. Constantly exploring emerging
@@ -105,12 +94,12 @@ const Hero = () => {
 					initial={{ opacity: 0, x: -160 }}
 					animate={{ opacity: 1, x: 0 }}
 					transition={{ delay: 3, duration: 1 }}
-					className="flex mt-4 items-center gap-6"
+					className="flex mt-4 items-center gap-3 md:gap-6"
 				>
 					<motion.button
 						whileHover={{ scale: 1.1 }}
 						whileTap={{ scale: 0.9 }}
-						className="font-primary text-white text-3xl flex items-center gap-4 bg-gray-600/25 backdrop-filter backdrop-blur-sm border border-gray-500 rounded-lg px-6 hover:bg-gray-400/25 transition-colors duration-300 leading-0 pb-4 pt-5"
+						className="font-primary text-white text-3xl flex items-center gap-2 md:gap-4 bg-gray-600/25 backdrop-filter backdrop-blur-sm border border-gray-500 rounded-lg p-4 md:p-6 hover:bg-gray-400/25 transition-colors duration-300 leading-0"
 					>
 						Contact Me
 						<BiPaperPlane size={30} />
@@ -133,13 +122,13 @@ const Hero = () => {
 					</motion.a>
 				</motion.div>
 			</div>
-			<div className="flex flex-1">
+			<div className="flex-1 relative">
 				<Image
 					src="/portrait.png"
 					width={800}
 					height={800}
 					alt="Picture of the author"
-					className="object-cover w-full h-full"
+					className="object-cover w-full h-full absolute bottom-0"
 				/>
 			</div>
 		</div>
