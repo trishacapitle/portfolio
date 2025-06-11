@@ -1,7 +1,6 @@
 import Image from "next/image";
-import ContactIcon from "./ui/ContactIcon";
 import * as motion from "motion/react-client";
-import { BiLogoLinkedinSquare, BiLogoGithub } from "react-icons/bi";
+import { BiLogoLinkedinSquare, BiLogoGithub, BiPaperPlane } from "react-icons/bi";
 
 
 const Hero = () => {
@@ -114,7 +113,7 @@ const Hero = () => {
 						className="font-primary text-white text-3xl flex items-center gap-4 bg-gray-600/25 backdrop-filter backdrop-blur-sm border border-gray-500 rounded-lg px-6 hover:bg-gray-400/25 transition-colors duration-300 leading-0 pb-4 pt-5"
 					>
 						Contact Me
-						<ContactIcon width="25" height="25" />
+						<BiPaperPlane size={30} />
 					</motion.button>
 					<motion.a
 						whileHover={{ scale: 1.2 }}
