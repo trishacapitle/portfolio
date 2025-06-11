@@ -99,7 +99,7 @@ const Hero = () => {
 					<motion.button
 						whileHover={{ scale: 1.1 }}
 						whileTap={{ scale: 0.9 }}
-						className="font-primary text-white text-3xl flex items-center gap-2 md:gap-4 bg-gray-600/25 backdrop-filter backdrop-blur-sm border border-gray-500 rounded-lg p-4 md:p-6 hover:bg-gray-400/25 transition-colors duration-300 leading-0"
+						className="font-primary text-white text-3xl flex items-center gap-2 md:gap-4 bg-gray-600/25 backdrop-filter backdrop-blur-sm border border-gray-500 rounded-lg p-4 md:px-6 hover:bg-gray-400/25 transition-colors duration-300 leading-0"
 					>
 						Contact Me
 						<BiPaperPlane size={30} />
