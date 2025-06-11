@@ -1,14 +1,14 @@
 import Image from "next/image";
 import ContactIcon from "./ui/ContactIcon";
-import LinkedInIcon from "./ui/LinkedInIcon";
-import GithubIcon from "./ui/GithubIcon";
 import * as motion from "motion/react-client";
-import Spline from "@splinetool/react-spline/next";
+import { BiLogoLinkedinSquare, BiLogoGithub } from "react-icons/bi";
+
 
 const Hero = () => {
+
 	return (
-		<div className={`flex h-full w-full snap-center`}>
-			<div className="flex flex-col flex-1 justify-center">
+		<div className="flex h-full w-full snap-center relative">
+			<div className="flex flex-col flex-1 justify-center ml-4 z-10">
 				<motion.div
 					initial={{ opacity: 0, y: 16 }}
 					animate={{ opacity: 1, y: 0 }}
@@ -17,53 +17,83 @@ const Hero = () => {
 				>
 					Hi, I&apos;m
 				</motion.div>
+				<div className="flex gap-2">
+					<motion.div
+						initial={{ opacity: 0, y: 16 }}
+						animate={{ opacity: 1, y: 0 }}
+						transition={{ ease: "easeIn", duration: 1.5 }}
+						className="text-white font-primary text-8xl tracking-wide relative flex"
+					>
+						<motion.div
+							initial={{ opacity: 1 }}
+							animate={{ opacity: 0 }}
+							transition={{
+								delay: 3,
+								duration: 1.5,
+								ease: "easeIn",
+								repeat: Infinity,
+								repeatType: "reverse",
+								repeatDelay: 2,
+							}}
+							className="text-(--grey)"
+						>
+							TRI
+						</motion.div>
+						<motion.div
+							animate={{ color: "#fff" }}
+							transition={{
+								delay: 3,
+								duration: 1.5,
+								ease: "easeInOut",
+								repeat: Infinity,
+								repeatType: "reverse",
+								repeatDelay: 2,
+							}}
+							className="text-(--grey)"
+						>
+							S
+						</motion.div>
+						<motion.div
+							animate={{ color: "#fff" }}
+							transition={{
+								delay: 3,
+								duration: 1.5,
+								ease: "easeInOut",
+								repeat: Infinity,
+								repeatType: "reverse",
+								repeatDelay: 2,
+							}}
+							className="text-(--grey)"
+						>
+							H
+						</motion.div>
+						<motion.div
+							animate={{ x: -120, color: "#fff" }}
+							transition={{
+								delay: 3,
+								duration: 1.5,
+								ease: "easeInOut",
+								repeat: Infinity,
+								repeatType: "reverse",
+								repeatDelay: 2,
+							}}
+							className="text-(--grey)"
+						>
+							A
+						</motion.div>
+					</motion.div>{" "}
+					<motion.div
+						initial={{ opacity: 0, y: 16 }}
+						animate={{ opacity: 1, y: 0 }}
+						transition={{ duration: 1.5, ease: "easeIn" }}
+						className="text-white font-primary text-8xl tracking-wide"
+					>
+						CAPITLE
+					</motion.div>
+				</div>
 				<motion.div
 					initial={{ opacity: 0, y: 16 }}
 					animate={{ opacity: 1, y: 0 }}
-					transition={{ ease: "easeIn", duration: 1.5 }}
-					className="text-white font-primary text-8xl tracking-wide relative flex"
-				>
-					<motion.div
-						initial={{ opacity: 1 }}
-						animate={{ opacity: 0 }}
-						transition={{ delay: 3, duration: 1.5, ease: "easeIn" }}
-						className="text-(--grey)"
-					>
-						TRI
-					</motion.div>
-					<motion.div
-						animate={{ color: "#fff" }}
-						transition={{ delay: 3, duration: 1.5, ease: "easeInOut" }}
-						className="text-(--grey)"
-					>
-						S
-					</motion.div>
-					<motion.div
-						animate={{ color: "#fff" }}
-						transition={{ delay: 3, duration: 1.5, ease: "easeInOut" }}
-						className="text-(--grey)"
-					>
-						H
-					</motion.div>
-					<motion.div
-						animate={{ x: -120, color: "#fff" }}
-						transition={{ delay: 3, duration: 1.5, ease: "easeInOut" }}
-						className="text-(--grey)"
-					>
-						A
-					</motion.div>
-				</motion.div>{" "}
-				<motion.div
-					initial={{ opacity: 0, y: 16 }}
-					animate={{ opacity: 1, y: 0 }}
-					transition={{ duration: 1.5, ease: "easeIn" }}
-					className="text-white font-primary text-8xl tracking-wide"
-				>
-					CAPITLE
-				</motion.div>
-				<motion.div
-					initial={{ opacity: 0, x: -160 }}
-					animate={{ opacity: 1, x: 0 }}
 					transition={{ ease: "easeIn", duration: 1.5 }}
 					className="text-white font-secondary font-normal text-xl"
 				>
@@ -75,7 +105,7 @@ const Hero = () => {
 				<motion.div
 					initial={{ opacity: 0, x: -160 }}
 					animate={{ opacity: 1, x: 0 }}
-					transition={{ ease: "easeIn", duration: 1.5 }}
+					transition={{ delay: 3, duration: 1 }}
 					className="flex mt-4 items-center gap-6"
 				>
 					<motion.button
@@ -92,7 +122,7 @@ const Hero = () => {
 						href="https://www.linkedin.com/in/trisha-capitle/"
 						target="_blank"
 					>
-						<LinkedInIcon width="40" height="40" />
+						<BiLogoLinkedinSquare size={40} color="white" />
 					</motion.a>
 					<motion.a
 						whileHover={{ scale: 1.2 }}
@@ -100,20 +130,17 @@ const Hero = () => {
 						href="github.com/trishacapitle"
 						target="_blank"
 					>
-						<GithubIcon width="40" height="40" />
+						<BiLogoGithub size={40} color="white" />
 					</motion.a>
 				</motion.div>
 			</div>
-			<div className="flex flex-1 items-center relative">
-				<div className="absolute w-full h-full z-0 bottom-0 left-0">
-					<Spline scene="https://prod.spline.design/fharqCcj8eCOuHbC/scene.splinecode" />
-				</div>
+			<div className="flex flex-1">
 				<Image
 					src="/portrait.png"
 					width={800}
 					height={800}
 					alt="Picture of the author"
-					className="z-99"
+					className="object-cover w-full h-full"
 				/>
 			</div>
 		</div>
