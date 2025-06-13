@@ -1,6 +1,4 @@
 import React from "react";
-import LinkedInIcon from "./ui/LinkedInIcon";
-import GithubIcon from "./ui/GithubIcon";
 
 const Contact = () => {
 	return (
@@ -20,8 +18,6 @@ const Contact = () => {
 					<span className="text-white underline">resume</span>
 				</p>
 				<div className="flex gap-6 mt-10">
-					<LinkedInIcon />
-					<GithubIcon />
 				</div>
 			</div>
 		</div>
