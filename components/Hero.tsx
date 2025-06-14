@@ -52,9 +52,9 @@ const Hero = () => {
   }, []);
 
 	return (
-		<div className="flex flex-col md:flex-row h-full w-full">
+		<div className="flex flex-col md:flex-row h-full w-full justify-center">
 			{/* Left Column */}
-			<div className="flex flex-col justify-center m-4 px-6 md:p-8 md:w-[45%] h-fit md:h-full">
+			<div className="flex flex-col justify-center pl-6 md:pl-8 md:w-[50%] h-fit md:h-full">
 				<div className="hi text-white font-primary text-3xl md:text-5xl">
 					Hi, I&apos;m
 				</div>
