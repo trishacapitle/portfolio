@@ -72,13 +72,20 @@ const Hero = () => {
 				"-=0.5"
 			)
 			.to(".s, .h", { color: "#fff", duration: 1 }, "<");
+		
+		gsap.to(".download", {
+			y: -8,
+			ease: "power1.in",
+			yoyo: true,
+			repeat: -1,
+		})
 	}, []);
 	
 
 	return (
 		<div className="flex flex-col md:flex-row h-full w-full justify-center">
 			{/* Left Column */}
-			<div className="flex flex-col justify-center pl-6 md:pl-8 md:w-[50%] h-fit md:h-full">
+			<div className="flex flex-col justify-center px-6 md:px-8 md:w-[50%] h-fit md:h-full">
 				<div className="hi text-white font-primary text-3xl md:text-5xl">
 					Hi, I&apos;m
 				</div>
@@ -130,11 +137,11 @@ const Hero = () => {
 					alt="Picture of the author"
 					className="object-cover w-full h-full absolute bottom-0"
 				/>
-			</div>
-			<button className="font-primary text-white text-2xl md:text-3xl flex items-center gap-2 md:gap-4 bg-gray-600/25 backdrop-filter backdrop-blur-sm border border-gray-500 rounded-lg p-3 md:p-4 md:px-6 hover:bg-gray-400/25 transition-colors duration-300 absolute bottom-20 right-20 z-99">
+				<button className="font-primary text-white text-2xl md:text-3xl flex items-center gap-1 md:gap-2 bg-gray-600/10 backdrop-filter backdrop-blur-sm border border-gray-500 rounded-lg p-3 md:p-4 md:px-6 hover:bg-gray-400/25 transition-colors duration-300 absolute bottom-30 right-40 md:bottom-40 md:right-60 z-99">
 				Resume
-				<BiArrowToBottom size={30} color="white" />
+				<BiArrowToBottom size={30} color="white" className="download" />
 			</button>
+			</div>
 		</div>
 	);
 };
