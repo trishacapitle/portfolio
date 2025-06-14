@@ -23,39 +23,38 @@ const Hero = () => {
 
     const tl = gsap.timeline();
 
-    tl.from(".hi", { y: -50, opacity: 0, duration: 1, ease: "power2.out" })
-      .from(".trisha", { y: -50, opacity: 0, duration: 1, ease: "power2.out" }, "-=0.5")
-      .from(".capitle", { y: -50, opacity: 0, duration: 1, ease: "power2.out" }, "-=0.5")
+		tl.from(".hi", { y: -50, opacity: 0, duration: 1, ease: "power2.out" })
+			.from(".trisha", { y: -50, opacity: 0, duration: 1, ease: "power2.out" }, "-=0.5")
+			.from(".capitle", { y: -50, opacity: 0, duration: 1, ease: "power2.out" }, "-=0.5")
 
-      // 1) fade‑in the element
-      .from(".description", {
-        y: -50,
-        opacity: 0,
-        duration: 1,
-        ease: "power2.out"
-      }, "-=0.5")
+			.from(".description", {
+				y: -50,
+				opacity: 0,
+				duration: 2,
+				ease: "power2.out"
+			}, "-=0.5")
 
-      // 2) then scramble it into place
-      .to(".description", {
-        duration: 3,
-        scrambleText: {
-          text: descriptionText,
-          chars: "upperCase",
-          revealDelay: 1,
-          speed: 0.3
-        }
-      }, "-=1.2")
+			.to(".description", {
+				duration: 3,
+				scrambleText: {
+					text: descriptionText,
+					chars: "upperAndLowerCase",
+					speed: 0.2
+				}
+			}, "<")
 
-      .from(".actions", { y: -50, opacity: 0, duration: 1, ease: "power2.out" }, "-=0.5")
-      .to(".tri", { delay: 2, opacity: 0 }, "-=1")
-      .to(".a", { x: -120, color: "#fff", ease: "elastic", duration: 1.5 }, "-=0.5")
-      .to(".s, .h", { color: "#fff", duration: 1 }, "<")
+			.from(".actions", { y: -50, opacity: 0, duration: 1, ease: "power2.out" }, "-=0.5")
+			.to(".tri", { delay: 2, opacity: 0 }, "-=1")
+			.to(".a", { x: -120, color: "#fff", ease: "elastic", duration: 1.5 }, "-=0.5")
+			.to(".s, .h", { color: "#fff", duration: 1 }, "<");
+
+		
   }, []);
 
 	return (
 		<div className="flex flex-col md:flex-row h-full w-full">
 			{/* Left Column */}
-			<div className="flex flex-col justify-center m-4 md:p-6 md:w-[45%]">
+			<div className="flex flex-col justify-center m-4 px-6 md:p-8 md:w-[45%] h-fit md:h-full">
 				<div className="hi text-white font-primary text-3xl md:text-5xl">
 					Hi, I&apos;m
 				</div>
@@ -100,7 +99,7 @@ const Hero = () => {
 			</div>
 
 			{/* Right Column */}
-			<div className="md:w-[50%] relative">
+			<div className="w-full h-[50%] md:w-[50%] md:h-full relative">
 				<Image
 					src="/portrait.png"
 					width={800}
