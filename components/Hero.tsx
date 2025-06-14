@@ -5,6 +5,7 @@ import {
 	BiLogoLinkedinSquare,
 	BiLogoGithub,
 	BiPaperPlane,
+	BiArrowToBottom
 } from "react-icons/bi";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
@@ -14,42 +15,65 @@ gsap.registerPlugin(useGSAP, ScrambleTextPlugin);
 
 const Hero = () => {
 	useGSAP(() => {
-    const descriptionText = `
-      A Front‑End Developer crafting modern, responsive websites with clean,
-      efficient code, and intuitive design. Constantly exploring emerging
-      technologies and innovative approaches to push the boundaries of web
-      development.
-    `.trim();
+		const descriptionText = `
+			A Front‑End Developer crafting modern, responsive websites with clean,
+			efficient code, and intuitive design. Constantly exploring emerging
+			technologies and innovative approaches to push the boundaries of web
+			development.
+		`.trim();
 
-    const tl = gsap.timeline();
+		const tl = gsap.timeline();
 
-		tl.from(".hi", { y: -50, opacity: 0, duration: 1, ease: "power2.out" })
-			.from(".trisha", { y: -50, opacity: 0, duration: 1, ease: "power2.out" }, "-=0.5")
-			.from(".capitle", { y: -50, opacity: 0, duration: 1, ease: "power2.out" }, "-=0.5")
-
-			.from(".description", {
-				y: -50,
-				opacity: 0,
-				duration: 2,
-				ease: "power2.out"
-			}, "-=0.5")
-
-			.to(".description", {
-				duration: 3,
-				scrambleText: {
-					text: descriptionText,
-					chars: "upperAndLowerCase",
-					speed: 0.2
-				}
-			}, "<")
-
-			.from(".actions", { y: -50, opacity: 0, duration: 1, ease: "power2.out" }, "-=0.5")
+		tl.fromTo(
+			".hi",
+			{ y: -50, opacity: 0 },
+			{ y: 0, opacity: 1, duration: 1, ease: "power2.out" }
+		)
+			.fromTo(
+				".trisha",
+				{ y: -50, opacity: 0 },
+				{ y: 0, opacity: 1, duration: 1, ease: "power2.out" },
+				"-=0.5"
+			)
+			.fromTo(
+				".capitle",
+				{ y: -50, opacity: 0 },
+				{ y: 0, opacity: 1, duration: 1, ease: "power2.out" },
+				"-=0.5"
+			)
+			.fromTo(
+				".description",
+				{ y: -50, opacity: 0 },
+				{ y: 0, opacity: 1, duration: 2, ease: "power2.out" },
+				"-=0.5"
+			)
+			.to(
+				".description",
+				{
+					duration: 3,
+					scrambleText: {
+						text: descriptionText,
+						chars: "upperAndLowerCase",
+						speed: 0.2,
+					},
+				},
+				"<"
+			)
+			.fromTo(
+				".actions",
+				{ y: -50, opacity: 0 },
+				{ y: 0, opacity: 1, duration: 1, ease: "power2.out" },
+				"-=0.5"
+			)
 			.to(".tri", { delay: 2, opacity: 0 }, "-=1")
-			.to(".a", { x: -120, color: "#fff", ease: "elastic", duration: 1.5 }, "-=0.5")
+			.to(
+				".a",
+				{ x: -120, color: "#fff", ease: "elastic", duration: 1.5 },
+				"-=0.5"
+			)
 			.to(".s, .h", { color: "#fff", duration: 1 }, "<");
-
-		
-  }, []);
+	}, []);
+	
 
 	return (
 		<div className="flex flex-col md:flex-row h-full w-full justify-center">
@@ -71,8 +95,7 @@ const Hero = () => {
 					</div>
 				</div>
 
-				<div className="description text-white font-secondary font-normal text-base md:text-lg">
-				</div>
+				<div className="description text-white font-secondary font-normal text-base md:text-lg"></div>
 
 				<div className="actions flex mt-4 items-center gap-2 md:gap-3">
 					<button className="button font-primary text-white text-2xl md:text-3xl flex items-center gap-2 md:gap-4 bg-gray-600/25 backdrop-filter backdrop-blur-sm border border-gray-500 rounded-lg p-3 md:p-4 md:px-6 hover:bg-gray-400/25 transition-colors duration-300 leading-0">
@@ -108,6 +131,10 @@ const Hero = () => {
 					className="object-cover w-full h-full absolute bottom-0"
 				/>
 			</div>
+			<button className="font-primary text-white text-2xl md:text-3xl flex items-center gap-2 md:gap-4 bg-gray-600/25 backdrop-filter backdrop-blur-sm border border-gray-500 rounded-lg p-3 md:p-4 md:px-6 hover:bg-gray-400/25 transition-colors duration-300 absolute bottom-20 right-20 z-99">
+				Resume
+				<BiArrowToBottom size={30} color="white" />
+			</button>
 		</div>
 	);
 };
