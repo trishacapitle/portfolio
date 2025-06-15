@@ -77,7 +77,7 @@ const Hero = () => {
 	
 
 	return (
-		<div className="flex flex-col md:flex-row h-full w-full justify-center">
+		<div className="flex flex-col md:flex-row h-screen w-full justify-center">
 			{/* Left Column */}
 			<div className="flex flex-col justify-center px-6 md:px-8 md:w-[50%] h-fit md:h-full">
 				<div className="hi text-white font-primary text-3xl md:text-5xl">

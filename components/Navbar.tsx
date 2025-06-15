@@ -2,7 +2,7 @@ import React from "react";
 
 const Navbar = () => {
 	return (
-		<div className="w-full h-16 justify-between items-center flex p-6 md:p-8 snap-center">
+		<div className="w-full h-16 justify-between items-center flex p-6 md:p-8">
 			<div className="font-primary text-white text-xl">
 				<span className="text-(--grey)">Ash</span>Dev
 			</div>
