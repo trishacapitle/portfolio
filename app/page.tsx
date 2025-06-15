@@ -8,7 +8,7 @@ export default function Home() {
 	return (
 		<main className=" bg-[#121212] flex flex-col justify-center items-center overflow-hidden mx-auto">
 			
-			<div className="max-w-7xl w-screen h-screen snap-y overflow-scroll no-scrollbar scroll-smooth">
+			<div className="max-w-7xl w-screen no-scrollbar">
 				<Navbar />
 				<Hero />
 				<TechStack />
