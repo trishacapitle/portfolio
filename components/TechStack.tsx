@@ -1,0 +1,87 @@
+"use client";
+
+import { useGSAP } from "@gsap/react";
+import gsap from "gsap";
+import { Draggable } from "gsap/Draggable";
+import { InertiaPlugin } from "gsap/InertiaPlugin";
+import Image from "next/image";
+
+gsap.registerPlugin(useGSAP, Draggable, InertiaPlugin);
+
+const icons = [
+	"html",
+	"css",
+	"javascript",
+	"typescript",
+	"gsap",
+	"react",
+	"next",
+	"tailwind",
+	"shadcn",
+	"electron",
+	"vite",
+	"vitest",
+	"git",
+	"ghub",
+	"vercel",
+	"figma",
+	"webflow",
+	"shopify",
+];
+
+const TechStack = () => {
+
+	useGSAP(() => {
+		Draggable.create(".icon", {
+			bounds: ".container",
+			inertia: true,
+		});
+
+		gsap.fromTo(
+			".icon",
+			{
+				opacity: 0,
+			},
+			{
+				delay:4,
+				opacity: 1,
+				duration: 1.5,
+				ease: "power1.in",
+				stagger: 0.1, 
+			}
+		);
+	}, []);
+	return (
+		<div
+			className="container relative flex flex-col h-fit md:h-screen w-full snap-center"
+		>
+			<div className="font-primary text-white text-6xl p-6 md:p-8">
+				<span className="text-(--grey)">Tech</span> Stack
+			</div>
+
+			<div className="font-secondary text-white text-lg md:text-xl text-center flex items-center p-12 md:p-20">
+				Adaptable and quick to master new tools and frameworks, I ensure my tech
+				stack evolves with industry trends and continuously refine my approach
+				to build efficient, modern websites.
+			</div>
+			<div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4 p-4">
+				{icons.map((icon) => (
+					<div
+						key={icon}
+						className="icon flex items-center p-4 bg-gray-600/10 backdrop-filter backdrop-blur-sm border border-gray-500 rounded-lg hover:bg-gray-400/25 transition-colors duration-300 justify-center h-40"
+					>
+							<Image
+								src={`/${icon}.svg`}
+								width={80}
+								height={80}
+								alt={icon}
+								className="object-cover justify-self-center"
+							/>
+					</div>
+				))}
+			</div>
+		</div>
+	);
+};
+
+export default TechStack;
