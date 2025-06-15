@@ -36,7 +36,7 @@ const TechStack = () => {
 		() => {
 			gsap.set(".icon, .subtitle", {
 				opacity: 0,
-				y: 20
+				y: 40
 			});
 
 			gsap.to(".icon", {
@@ -57,8 +57,18 @@ const TechStack = () => {
 				},
 				y: 0,
 				opacity: 1,
-				duration: 1.5,
+				duration: 1,
 				ease: "power1.in",
+			});
+
+			gsap.from(".title", {
+				scrollTrigger: {
+					trigger: ".title",
+					markers: true,
+				},
+				opacity: 0,
+				x: 400,
+				duration: 1,
 			});
 		},
 		{ scope: container }
