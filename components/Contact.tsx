@@ -36,17 +36,7 @@ const Contact = () => {
           <button>Send Message paperplane here</button>
         </div>
       </div>
-      <div>
-        <hr className="border border-[#141414]" />
-        <p className="font-secondary text-center text-(--grey)">
-          Designed in <span className="text-white">Figma</span>, coded on{" "}
-          <span className="text-white">Visual Studio Code</span>. Built with{" "}
-          <span className="text-white">Next.js</span> and{" "}
-          <span className="text-white">Tailwind CSS</span>, animations brewed on{" "}
-          <span className="text-white">GSAP</span>, deployed with{" "}
-          <span className="text-white">Vercel</span>.
-        </p>
-      </div>
+      
     </div>
   );
 };
