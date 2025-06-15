@@ -82,11 +82,6 @@ const TechStack = () => {
 				<span className="text-(--grey)">Tech</span> Stack
 			</div>
 
-			<div className="subtitle font-secondary text-white text-lg md:text-xl text-center flex items-center p-12 md:p-20">
-				Adaptable and quick to master new tools and frameworks, I ensure my tech
-				stack evolves with industry trends and continuously refine my approach
-				to build efficient, modern websites.
-			</div>
 			<div
 				
 				className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4 p-4"
@@ -106,6 +101,11 @@ const TechStack = () => {
 						/>
 					</div>
 				))}
+			</div>
+			<div className="subtitle font-secondary text-white text-lg md:text-xl text-center flex items-center p-12 md:p-20">
+				Adaptable and quick to master new tools and frameworks, I ensure my tech
+				stack evolves with industry trends and continuously refine my approach
+				to build efficient, modern websites.
 			</div>
 		</div>
 	);
