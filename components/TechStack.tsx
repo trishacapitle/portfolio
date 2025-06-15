@@ -43,6 +43,9 @@ const TechStack = () => {
 				scrollTrigger: {
 					trigger: ".icon",
 					markers: true,
+					scrub: true,
+					start: "top 90%",
+					end:"top 60%"
 				},
 				opacity: 1,
 				duration: 1.5,
