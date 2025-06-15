@@ -1,8 +1,20 @@
-import React from "react";
+"use client"
+import { useGSAP } from "@gsap/react";
+import gsap from "gsap";
+
+gsap.registerPlugin(useGSAP);
 
 const Navbar = () => {
+	useGSAP(() => {
+		gsap.from (".navbar",{ 
+			opacity: 0,
+			y: -20,
+			duration: 1.5,
+})
+	})
+
 	return (
-		<div className="w-full h-16 justify-between items-center flex p-6 md:p-8">
+		<div className="navbar w-full h-16 justify-between items-center flex p-6 md:p-8">
 			<div className="font-primary text-white text-xl">
 				<span className="text-(--grey)">Ash</span>Dev
 			</div>
