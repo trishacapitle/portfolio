@@ -34,15 +34,14 @@ const TechStack = () => {
 
 	useGSAP(
 		() => {
-			gsap.set(".icon", {
+			gsap.set(".icon, .subtitle", {
 				opacity: 0,
+				y: 20
 			});
 
 			gsap.to(".icon", {
 				scrollTrigger: {
 					trigger: ".icon",
-					start: "top 50%",
-					scrub: true,
 					markers: true,
 				},
 				opacity: 1,
@@ -50,11 +49,22 @@ const TechStack = () => {
 				ease: "power1.in",
 				stagger: 0.1,
 			});
+
+			gsap.to(".subtitle", {
+				scrollTrigger: {
+					trigger: ".subtitle",
+					markers: true,
+				},
+				y: 0,
+				opacity: 1,
+				duration: 1.5,
+				ease: "power1.in",
+			});
 		},
 		{ scope: container }
 	)
 	return (
-		<div className="container relative flex flex-col h-fit lg:h-screen w-full">
+		<div ref={container} className="container relative flex flex-col h-fit lg:h-screen w-full">
 			<div className="title font-primary text-white text-6xl p-6 md:p-8">
 				<span className="text-(--grey)">Tech</span> Stack
 			</div>
@@ -65,7 +75,7 @@ const TechStack = () => {
 				to build efficient, modern websites.
 			</div>
 			<div
-				ref={container}
+				
 				className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4 p-4"
 			>
 				{icons.map((icon) => (
@@ -79,6 +89,7 @@ const TechStack = () => {
 							height={80}
 							alt={icon}
 							className="object-cover justify-self-center"
+							draggable={false}
 						/>
 					</div>
 				))}
