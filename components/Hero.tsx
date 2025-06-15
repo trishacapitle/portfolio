@@ -41,12 +41,6 @@ const Hero = () => {
 				{ y: 0, opacity: 1, duration: 1, ease: "power2.out" },
 				"-=0.5"
 			)
-			.fromTo(
-				".description",
-				{ y: -50, opacity: 0 },
-				{ y: 0, opacity: 1, duration: 2, ease: "power2.out" },
-				"-=0.5"
-			)
 			.to(
 				".description",
 				{
@@ -68,10 +62,10 @@ const Hero = () => {
 			.to(".tri", { delay: 2, opacity: 0 }, "-=1")
 			.to(
 				".a",
-				{ x: -120, color: "#fff", ease: "elastic", duration: 1.5 },
+				{ x: -120, ease: "elastic", duration: 1.5 },
 				"-=0.5"
 			)
-			.to(".s, .h", { color: "#fff", duration: 1 }, "<");
+			.to(".s, .h", { duration: 1 }, "<");
 		
 		gsap.to(".download", {
 			y: -8,
