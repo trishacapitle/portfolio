@@ -76,91 +76,157 @@ const Hero = () => {
 			repeat: -1,
 		})
 
+		gsap.set(".section", {
+			visibility: "hidden",
+			opacity: 0,
+		});
+
 		const tl2 = gsap.timeline({
 			scrollTrigger: {
 				trigger: ".hero",
 				start: "top top",
 				end: "bottom top",
-				scrub: true,
+				scrub: 2,
 				pin: true,
 			}
 		});
 
-		tl2.to(".image", {
-			x: 100,
-		})
-			.to(".hi, .trisha, .description, .actions", {
-				y: -50,
-				opacity: 0,
-				duration: 1,
+		tl2
+      .to(
+        ".image",
+        {
+					xPercent: -70,
+					duration: 3,
+					ease: "power2.in",
+        },
+        "+=0.5",
+      )
+      .to(
+        ".hi, .trisha, .capitle, .description, .actions",
+        {
+          y: -50,
+          opacity: 0,
+          duration: 3,
+          ease: "power2.in",
+        },
+        "<",
+      )
+      .to(
+        ".column1",
+        {
+          visibility: "hidden",
+          duration: 3,
+          ease: "power2.in",
+        },
+        "+=2",
+      )
+      .to(
+        ".image",
+        {
+          width: "100%",
+        },
+        "<",
+      )
+      .to(
+        ".resume",
+        {
+					y: 50,
+					opacity: 0,
+					duration: 3,
+        },
+        "<",
+		)
+			.to(".section", {
+				visibility: "visible",
+				opacity: 1,
+				duration: 5,
 				ease: "power2.in",
-			}, "<");
+				top: 50,
+			}, "<")
+			;
 	}, []);
 	
 
 	return (
-		<div className="hero flex flex-col md:flex-row h-screen w-full justify-center">
-			{/* Left Column */}
-			<div className="flex flex-col justify-center px-6 md:px-8 md:w-[50%] h-fit md:h-full">
-				<div className="hi text-white font-primary text-3xl md:text-5xl">
-					Hi, I&apos;m
-				</div>
+    <div className="hero relative flex h-screen w-full flex-col justify-center md:flex-row">
+      {/* Left Column */}
+      <div className="column1 flex h-fit flex-col justify-center px-6 md:h-full md:w-[50%] md:px-8">
+        <div className="hi font-primary text-3xl text-white md:text-5xl">
+          Hi, I&apos;m
+        </div>
 
-				<div className="flex gap-0 md:gap-2 flex-col md:flex-row">
-					<div className="trisha font-primary text-8xl tracking-wide relative flex">
-						<div className="tri headline-part1 text-(--grey)">TRI</div>
-						<div className="s text-(--grey)">S</div>
-						<div className="h text-(--grey)">H</div>
-						<div className="a text-(--grey)">A</div>
-					</div>
-					<div className="capitle text-white font-primary text-8xl tracking-wide">
-						CAPITLE
-					</div>
-				</div>
+        <div className="flex flex-col gap-0 md:flex-row md:gap-2">
+          <div className="trisha font-primary relative flex text-8xl tracking-wide">
+            <div className="tri headline-part1 text-(--grey)">TRI</div>
+            <div className="s text-(--grey)">S</div>
+            <div className="h text-(--grey)">H</div>
+            <div className="a text-(--grey)">A</div>
+          </div>
+          <div className="capitle font-primary text-8xl tracking-wide text-white">
+            CAPITLE
+          </div>
+        </div>
 
-				<div className="description text-white font-secondary font-normal text-base md:text-lg"></div>
+        <div className="description font-secondary text-base font-normal text-white md:text-lg"></div>
 
-				<div className="actions flex mt-4 items-center gap-2 md:gap-3">
-					<button className="button font-primary text-white text-2xl md:text-3xl flex items-center gap-2 md:gap-4 bg-gray-600/25 backdrop-filter backdrop-blur-sm border border-gray-500 rounded-lg p-3 md:p-4 md:px-6 hover:bg-gray-400/25 transition-colors duration-300 leading-0">
-						Contact Me
-						<BiPaperPlane size={30} />
-					</button>
-					<a
-						className="button"
-						href="https://www.linkedin.com/in/trisha-capitle/"
-						target="_blank"
-						rel="noopener noreferrer"
-					>
-						<BiLogoLinkedinSquare size={40} color="white" />
-					</a>
-					<a
-						className="button"
-						href="https://github.com/trishacapitle"
-						target="_blank"
-						rel="noopener noreferrer"
-					>
-						<BiLogoGithub size={40} color="white" />
-					</a>
-				</div>
-			</div>
+        <div className="actions mt-4 flex items-center gap-2 md:gap-3">
+          <button className="button font-primary flex items-center gap-2 rounded-lg border border-gray-500 bg-gray-600/25 p-3 text-2xl leading-0 text-white backdrop-blur-sm backdrop-filter transition-colors duration-300 hover:bg-gray-400/25 md:gap-4 md:p-4 md:px-6 md:text-3xl">
+            Contact Me
+            <BiPaperPlane size={30} />
+          </button>
+          <a
+            className="button"
+            href="https://www.linkedin.com/in/trisha-capitle/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <BiLogoLinkedinSquare size={40} color="white" />
+          </a>
+          <a
+            className="button"
+            href="https://github.com/trishacapitle"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <BiLogoGithub size={40} color="white" />
+          </a>
+        </div>
+      </div>
 
-			{/* Right Column */}
-			<div className=" image w-full h-[50%] md:w-[50%] md:h-full relative">
-				<Image
-					src="/portrait.png"
-					width={800}
-					height={800}
-					alt="Picture of the author"
-					draggable={false}
-					className="object-cover w-full h-full absolute bottom-0"
-				/>
-				<button className="font-primary text-white text-2xl md:text-3xl flex items-center gap-1 md:gap-2 bg-gray-600/10 backdrop-filter backdrop-blur-sm border border-gray-500 rounded-lg p-3 md:p-4 md:px-6 hover:bg-gray-400/25 transition-colors duration-300 absolute bottom-30 right-40 md:bottom-40 md:right-60 z-99">
-				Resume
-				<BiArrowToBottom size={30} color="white" className="download" />
-			</button>
-			</div>
-		</div>
-	);
+      {/* Right Column */}
+      <div className="image relative h-[50%] w-full md:h-full md:w-[50%]">
+        <Image
+          src="/portrait.png"
+          width={800}
+          height={800}
+          alt="Picture of the author"
+          draggable={false}
+          className="absolute bottom-0 h-full w-full object-cover"
+        />
+        <button className="resume font-primary absolute right-40 bottom-30 z-99 flex items-center gap-1 rounded-lg border border-gray-500 bg-gray-600/10 p-3 text-2xl text-white backdrop-blur-sm backdrop-filter transition-colors duration-300 hover:bg-gray-400/25 md:right-60 md:bottom-40 md:gap-2 md:p-4 md:px-6 md:text-3xl">
+          Resume
+          <BiArrowToBottom size={30} color="white" className="download" />
+        </button>
+      </div>
+
+      <div className="section absolute bottom-20 max-w-2xl right-20">
+        <div className="font-primary text-xl tracking-widest text-(--grey) md:text-5xl">
+          2024-2025
+        </div>
+        <div className="jobTitle font-primary text-8xl tracking-wide text-white">
+          Full-Stack <span className="text-(--grey)">Developer</span>
+        </div>
+        <div className="font-secondary text-base font-normal text-(--grey) md:text-lg">
+          Independent Contractor/Freelancer
+        </div>
+        <div className="font-secondary text-base font-normal text-white md:text-lg">
+          Designed and developed 8+ responsive websites, apps, and custom
+          software solutions that met each client’s goals, earning an average
+          satisfaction score of 4.8/5.
+        </div>
+      </div>
+    </div>
+  );
 };
 
 export default Hero;
