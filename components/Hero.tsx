@@ -95,18 +95,18 @@ const Hero = () => {
       .to(
         ".image",
         {
-					xPercent: -70,
-					duration: 3,
-					ease: "power2.in",
+          xPercent: -70,
+          duration: 2,
+          ease: "power2.in",
         },
-        "+=0.5",
+        "-=0.5",
       )
       .to(
         ".hi, .trisha, .capitle, .description, .actions",
         {
           y: -50,
           opacity: 0,
-          duration: 3,
+          duration: 2,
           ease: "power2.in",
         },
         "<",
@@ -115,10 +115,10 @@ const Hero = () => {
         ".column1",
         {
           visibility: "hidden",
-          duration: 3,
+          duration: 2,
           ease: "power2.in",
         },
-        "+=2",
+        "-=0.5",
       )
       .to(
         ".image",
@@ -134,16 +134,19 @@ const Hero = () => {
 					opacity: 0,
 					duration: 3,
         },
+        "-=1",
+      )
+      .to(
+        ".section",
+        {
+          visibility: "visible",
+          opacity: 1,
+          duration: 1,
+          ease: "power2.in",
+					bottom: 80,
+        },
         "<",
-		)
-			.to(".section", {
-				visibility: "visible",
-				opacity: 1,
-				duration: 5,
-				ease: "power2.in",
-				top: 50,
-			}, "<")
-			;
+      );
 	}, []);
 	
 
@@ -209,17 +212,18 @@ const Hero = () => {
         </button>
       </div>
 
-      <div className="section absolute bottom-20 max-w-2xl right-20">
+      <div className="section absolute bottom-20 max-w-2xl right-0">
         <div className="font-primary text-xl tracking-widest text-(--grey) md:text-5xl">
           2024-2025
-        </div>
+				</div>
         <div className="jobTitle font-primary text-8xl tracking-wide text-white">
           Full-Stack <span className="text-(--grey)">Developer</span>
         </div>
-        <div className="font-secondary text-base font-normal text-(--grey) md:text-lg">
+				<div className="font-secondary text-sm font-normal text-white md:text-lg -mt-2 mb-2">
           Independent Contractor/Freelancer
         </div>
-        <div className="font-secondary text-base font-normal text-white md:text-lg">
+        
+        <div className="font-secondary text-sm font-normal text-white md:text-base">
           Designed and developed 8+ responsive websites, apps, and custom
           software solutions that met each client’s goals, earning an average
           satisfaction score of 4.8/5.
