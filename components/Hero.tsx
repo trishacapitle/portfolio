@@ -10,8 +10,10 @@ import {
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import { ScrambleTextPlugin } from "gsap/ScrambleTextPlugin";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { ScrollSmoother } from "gsap/ScrollSmoother";
 
-gsap.registerPlugin(useGSAP, ScrambleTextPlugin);
+gsap.registerPlugin(useGSAP, ScrambleTextPlugin, ScrollTrigger, ScrollSmoother);
 
 const Hero = () => {
 	useGSAP(() => {
@@ -73,11 +75,31 @@ const Hero = () => {
 			yoyo: true,
 			repeat: -1,
 		})
+
+		const tl2 = gsap.timeline({
+			scrollTrigger: {
+				trigger: ".hero",
+				start: "top top",
+				end: "bottom top",
+				scrub: true,
+				pin: true,
+			}
+		});
+
+		tl2.to(".image", {
+			x: 100,
+		})
+			.to(".hi, .trisha, .description, .actions", {
+				y: -50,
+				opacity: 0,
+				duration: 1,
+				ease: "power2.in",
+			}, "<");
 	}, []);
 	
 
 	return (
-		<div className="flex flex-col md:flex-row h-screen w-full justify-center">
+		<div className="hero flex flex-col md:flex-row h-screen w-full justify-center">
 			{/* Left Column */}
 			<div className="flex flex-col justify-center px-6 md:px-8 md:w-[50%] h-fit md:h-full">
 				<div className="hi text-white font-primary text-3xl md:text-5xl">
@@ -123,7 +145,7 @@ const Hero = () => {
 			</div>
 
 			{/* Right Column */}
-			<div className="w-full h-[50%] md:w-[50%] md:h-full relative">
+			<div className=" image w-full h-[50%] md:w-[50%] md:h-full relative">
 				<Image
 					src="/portrait.png"
 					width={800}
