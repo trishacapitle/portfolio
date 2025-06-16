@@ -73,9 +73,9 @@ const Contact = () => {
           id="message"
           className="mt-2 mb-8 h-40 rounded-sm border border-(--grey)/50 bg-(--grey)/10 px-4 py-2 placeholder:text-white"
         />
-        <button className="button font-primary flex w-3xs items-center gap-2 rounded-lg border border-gray-500 bg-gray-600/25 p-3 text-2xl leading-0 text-white backdrop-blur-sm backdrop-filter transition-colors duration-300 hover:bg-gray-400/25 md:gap-4 md:p-4 md:px-6 md:text-3xl">
+        <button className="button font-primary flex w-fit items-center gap-2 rounded-lg border border-gray-500 bg-gray-600/25 p-2 text-lg leading-0 text-white backdrop-blur-sm backdrop-filter transition-colors duration-300 hover:bg-gray-400/25 md:gap-4 md:p-4 md:px-6 md:text-2xl tracking-wide">
           Send Message
-          <BiPaperPlane size={30} />
+          <BiPaperPlane size={20} />
         </button>
       </div>
     </div>
