@@ -2,7 +2,7 @@ import React from "react";
 
 const Projects = () => {
   return (
-    <div className="flex h-screen w-full flex-col gap-6">
+    <div className="flex h-fit md:h-screen w-full flex-col gap-6">
       <div className="font-primary p-6 text-6xl text-white md:p-8">
         Featured <span className="text-(--grey)">Projects</span>
       </div>
