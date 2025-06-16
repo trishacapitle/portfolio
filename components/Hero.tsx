@@ -9,65 +9,48 @@ import {
 } from "react-icons/bi";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
-import { ScrambleTextPlugin } from "gsap/ScrambleTextPlugin";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { ScrollSmoother } from "gsap/ScrollSmoother";
 
-gsap.registerPlugin(useGSAP, ScrambleTextPlugin, ScrollTrigger, ScrollSmoother);
+gsap.registerPlugin(useGSAP, ScrollTrigger, ScrollSmoother);
 
 const Hero = () => {
 	useGSAP(() => {
-		const descriptionText = `
-			A Front‑End Developer crafting modern, responsive websites with clean,
-			efficient code, and intuitive design. Constantly exploring emerging
-			technologies and innovative approaches to push the boundaries of web
-			development.
-		`.trim();
 
 		const tl = gsap.timeline();
 
 		tl.fromTo(
-			".hi",
-			{ y: -50, opacity: 0 },
-			{ y: 0, opacity: 1, duration: 1, ease: "power2.out" }
-		)
-			.fromTo(
-				".trisha",
-				{ y: -50, opacity: 0 },
-				{ y: 0, opacity: 1, duration: 1, ease: "power2.out" },
-				"-=0.5"
-			)
-			.fromTo(
-				".capitle",
-				{ y: -50, opacity: 0 },
-				{ y: 0, opacity: 1, duration: 1, ease: "power2.out" },
-				"-=0.5"
-			)
-			.to(
-				".description",
-				{
-					duration: 3,
-					scrambleText: {
-						text: descriptionText,
-						chars: "upperAndLowerCase",
-						speed: 0.2,
-					},
-				},
-				"<"
-			)
-			.fromTo(
-				".actions",
-				{ y: -50, opacity: 0 },
-				{ y: 0, opacity: 1, duration: 1, ease: "power2.out" },
-				"-=0.5"
-			)
-			.to(".tri", { delay: 2, opacity: 0 }, "-=1")
-			.to(
-				".a",
-				{ x: -120, ease: "elastic", duration: 1.5 },
-				"-=0.5"
-			)
-			.to(".s, .h", { duration: 1 }, "<");
+      ".hi",
+      { y: -50, opacity: 0 },
+      { y: 0, opacity: 1, duration: 1, ease: "power2.out" },
+    )
+      .fromTo(
+        ".trisha",
+        { y: -50, opacity: 0 },
+        { y: 0, opacity: 1, duration: 1, ease: "power2.out" },
+        "-=0.5",
+      )
+      .fromTo(
+        ".capitle",
+        { y: -50, opacity: 0 },
+        { y: 0, opacity: 1, duration: 1, ease: "power2.out" },
+        "-=0.5",
+      )
+      .fromTo(
+        ".description",
+        { y: -50, opacity: 0 },
+        { y: 0, opacity: 1, duration: 1, ease: "power2.out" },
+        "-=0.5",
+      )
+      .fromTo(
+        ".actions",
+        { y: -50, opacity: 0 },
+        { y: 0, opacity: 1, duration: 1, ease: "power2.out" },
+        "-=0.5",
+      )
+      .to(".tri", { delay: 1, opacity: 0 }, "-=1")
+      .to(".a", { x: -120, ease: "elastic", duration: 1.5 }, "-=0.5")
+      .to(".s, .h", { duration: 1 }, "<");
 		
 		gsap.to(".download", {
 			y: -8,
@@ -82,25 +65,21 @@ const Hero = () => {
 		});
 
 		const tl2 = gsap.timeline({
-			scrollTrigger: {
-				trigger: ".hero",
-				start: "top top",
-				end: "bottom top",
-				scrub: 2,
-				pin: true,
-			}
-		});
+      scrollTrigger: {
+        trigger: ".hero",
+        start: "top top",
+        end: "+=4000",
+        scrub: 2,
+        pin: true,
+      },
+    });
 
 		tl2
-      .to(
-        ".image",
-        {
-          xPercent: -70,
-          duration: 2,
-          ease: "power2.in",
-        },
-        "-=0.5",
-      )
+      .to(".image", {
+        xPercent: -80,
+        duration: 2,
+        ease: "power2.in",
+      })
       .to(
         ".hi, .trisha, .capitle, .description, .actions",
         {
@@ -121,31 +100,38 @@ const Hero = () => {
         "-=0.5",
       )
       .to(
+        ".resume",
+        {
+          y: 20,
+          opacity: 0,
+          duration: 1,
+        },
+        "-=3",
+      )
+      .to(
         ".image",
         {
           width: "100%",
+          duration: 2,
         },
         "<",
-      )
-      .to(
-        ".resume",
-        {
-					y: 50,
-					opacity: 0,
-					duration: 3,
-        },
-        "-=1",
       )
       .to(
         ".section",
         {
           visibility: "visible",
           opacity: 1,
-          duration: 1,
+          duration: 3,
           ease: "power2.in",
-					bottom: 80,
+          y: -200,
         },
-        "<",
+        "-=1",
+      )
+      .to(
+        ".section",
+        {
+          duration: 2,
+        }
       );
 	}, []);
 	
@@ -170,7 +156,12 @@ const Hero = () => {
           </div>
         </div>
 
-        <div className="description font-secondary text-base font-normal text-white md:text-lg"></div>
+        <div className="description font-secondary text-base font-normal text-white md:text-lg">
+          A Front‑End Developer crafting modern, responsive websites with clean,
+          efficient code, and intuitive design. Constantly exploring emerging
+          technologies and innovative approaches to push the boundaries of web
+          development.
+        </div>
 
         <div className="actions mt-4 flex items-center gap-2 md:gap-3">
           <button className="button font-primary flex items-center gap-2 rounded-lg border border-gray-500 bg-gray-600/25 p-3 text-2xl leading-0 text-white backdrop-blur-sm backdrop-filter transition-colors duration-300 hover:bg-gray-400/25 md:gap-4 md:p-4 md:px-6 md:text-3xl">
@@ -212,17 +203,17 @@ const Hero = () => {
         </button>
       </div>
 
-      <div className="section absolute bottom-20 max-w-2xl right-0">
+      <div className="section absolute right-0 bottom-20 max-w-2xl">
         <div className="font-primary text-xl tracking-widest text-(--grey) md:text-5xl">
           2024-2025
-				</div>
+        </div>
         <div className="jobTitle font-primary text-8xl tracking-wide text-white">
           Full-Stack <span className="text-(--grey)">Developer</span>
         </div>
-				<div className="font-secondary text-sm font-normal text-white md:text-lg -mt-2 mb-2">
+        <div className="font-secondary -mt-2 mb-2 text-sm font-normal text-white md:text-lg">
           Independent Contractor/Freelancer
         </div>
-        
+
         <div className="font-secondary text-sm font-normal text-white md:text-base">
           Designed and developed 8+ responsive websites, apps, and custom
           software solutions that met each client’s goals, earning an average
