@@ -17,7 +17,7 @@ const Projects = () => {
       description:
         "This is a description of project two. It is even better than the first one.",
       stack: ["Vue, Django"],
-      image: "/path/to/image2.jpg",
+      image: "/portrait.png",
       tags: ["Conceptual Work"],
       preview: "https://example.com/preview1",
       github: "https://github.com/example/project-two",
@@ -30,7 +30,7 @@ const Projects = () => {
       <div className="font-primary p-6 text-6xl text-white md:p-8">
         <span className="text-(--grey)">Featured</span> Projects
       </div>
-      <div className="flex w-full justify-center gap-4">
+      <div className="flex flex-col w-full items-center gap-4">
         {Object.entries(projects).map(([key, project]) => (
           <ProjectCard key={key} {...project} stack={project.stack.join(", ")} tags={project.tags.join(", ")} />
         ))}
