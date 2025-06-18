@@ -1,11 +1,39 @@
-import { BiPaperPlane, BiLogoLinkedin, BiLogoGithub, BiCopyright } from "react-icons/bi";
+"use client";
+
+import {
+  BiPaperPlane,
+  BiLogoLinkedin,
+  BiLogoGithub,
+  BiCopyright,
+} from "react-icons/bi";
+import gsap from "gsap";
+import { useGSAP } from "@gsap/react";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+gsap.registerPlugin(useGSAP, ScrollTrigger);
 
 const Contact = () => {
+  useGSAP(() => {
+    gsap.from(".connect, form", {
+      scrollTrigger: {
+        trigger: ".trigger",
+        start: "top top",
+        end: "bottom top",
+        markers: true,
+        scrub: true,
+      },
+      x: 200,
+      opacity: 0,
+      duration: 2,
+      ease: "power2.out",
+    });
+  });
+
   return (
-    <div>
-      <div className="flex h-screen flex-col gap-4 md:h-150 md:flex-row md:gap-6">
+    <div className="trigger">
+      <div className="flex h-screen flex-col gap-4 p-6 md:h-150 md:flex-row md:gap-6">
         <div className="flex h-[50%] w-full flex-col justify-between text-white md:w-[50%]">
-          <div>
+          <div className="connect">
             <p className="font-primary text-6xl">
               <span className="text-(--grey)">Let&apos;s</span> Connect
             </p>
@@ -48,7 +76,7 @@ const Contact = () => {
             id="name"
             type="text"
             placeholder="John Doe"
-            className="mt-2 mb-4 rounded-sm border border-(--grey)/50 bg-(--grey)/10 px-4 py-2 placeholder:text-white"
+            className="mt-2 mb-4 rounded-sm border border-(--grey)/50 bg-(--grey)/10 px-4 py-2 placeholder:text-(--grey)"
           />
           <label htmlFor="email" className="text-sm text-(--grey)">
             Email
@@ -57,7 +85,7 @@ const Contact = () => {
             id="email"
             type="text"
             placeholder="johndoe@email.com"
-            className="mt-2 mb-4 rounded-sm border border-(--grey)/50 bg-(--grey)/10 px-4 py-2 placeholder:text-white"
+            className="mt-2 mb-4 rounded-sm border border-(--grey)/50 bg-(--grey)/10 px-4 py-2 placeholder:text-(--grey)"
           />
           <label htmlFor="subject" className="text-sm text-(--grey)">
             Subject
@@ -74,14 +102,14 @@ const Contact = () => {
             id="message"
             className="mt-2 mb-8 h-40 rounded-sm border border-(--grey)/50 bg-(--grey)/10 px-4 py-2 placeholder:text-white"
           />
-          <button className="button font-primary flex w-fit items-center gap-2 rounded-lg border border-gray-500 bg-gray-600/25 p-2 text-lg leading-0 tracking-wide text-white backdrop-blur-sm backdrop-filter transition-colors duration-300 hover:bg-gray-400/25 md:gap-4 md:p-4 md:px-6 md:text-2xl">
+          <button className="button font-primary flex w-fit items-center gap-2 rounded-lg border border-gray-500 bg-gray-600/25 py-2 px-4 text-lg leading-0 tracking-wide text-white backdrop-blur-sm backdrop-filter transition-colors duration-300 hover:bg-gray-400/25 md:gap-4 md:p-4 md:px-6 md:text-2xl">
             Send Message
             <BiPaperPlane size={20} />
           </button>
         </div>
       </div>
       <div className="p-6">
-        <hr className="border border-(--grey) mb-4" />
+        <hr className="mb-4 border border-(--grey)" />
         <p className="font-secondary text-center text-(--grey)">
           Designed in <span className="text-white">Figma</span>, coded on{" "}
           <span className="text-white">Visual Studio Code</span>. Built with{" "}
