@@ -42,13 +42,11 @@ const TechStack = () => {
 			gsap.to(".icon", {
 				scrollTrigger: {
 					trigger: ".icon",
-					markers: true,
-					scrub: true,
-					start: "top 90%",
-					end:"top 60%"
+					start: "top 80%",
+					end:"top 40%"
 				},
 				opacity: 1,
-				duration: 1.5,
+				duration: 1,
 				ease: "power1.in",
 				stagger: 0.1,
 			});
@@ -56,18 +54,16 @@ const TechStack = () => {
 			gsap.to(".subtitle", {
 				scrollTrigger: {
 					trigger: ".subtitle",
-					markers: true,
 				},
 				y: 0,
 				opacity: 1,
-				duration: 1,
+				duration: 2,
 				ease: "power1.in",
 			});
 
 			gsap.from(".title", {
 				scrollTrigger: {
 					trigger: ".title",
-					markers: true,
 				},
 				opacity: 0,
 				x: 400,
