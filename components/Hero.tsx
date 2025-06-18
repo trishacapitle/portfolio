@@ -203,7 +203,7 @@ const Hero = () => {
         </button>
       </div>
 
-      <div className="section absolute right-0 bottom-20 max-w-2xl">
+      <div className="section absolute right-0 bottom-20 max-w-xl mx-4">
         <div className="font-primary text-xl tracking-widest text-(--grey) md:text-5xl">
           2024-2025
         </div>
