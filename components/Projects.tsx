@@ -2,11 +2,11 @@ import React from "react";
 
 const Projects = () => {
   return (
-    <div className="flex h-fit md:h-screen w-full flex-col gap-6">
+    <div className="flex h-fit w-full flex-col gap-6 md:h-screen">
       <div className="font-primary p-6 text-6xl text-white md:p-8">
-        Featured <span className="text-(--grey)">Projects</span>
+        <span className="text-(--grey)">Featured</span> Projects
       </div>
-      <div className="m-4 flex gap-2 justify-center items-center flex-1">
+      <div className="m-4 flex flex-1 items-center justify-center gap-2">
         <div className="font-secondary flex flex-col items-center gap-4 rounded-xl border border-gray-500 bg-gray-600/25 text-white backdrop-blur-sm backdrop-filter transition-colors duration-300 hover:bg-gray-400/25 md:flex-row md:p-6">
           <div className="relative h-[80vw] max-h-[400px] w-[80vw] max-w-[400px] rounded-xl bg-[#1A1A1A]">
             image here
