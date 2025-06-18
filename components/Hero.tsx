@@ -216,8 +216,7 @@ const Hero = () => {
 
         <div className="font-secondary text-sm font-normal text-white md:text-base">
           Designed and developed 8+ responsive websites, apps, and custom
-          software solutions that met each client’s goals, earning an average
-          satisfaction score of 4.8/5.
+          software solutions that met each client’s goals and time constraints.
         </div>
       </div>
     </div>
