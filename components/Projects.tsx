@@ -24,15 +24,19 @@ const Projects = () => {
     },
   };
 
-
   return (
-    <div className="flex h-fit w-full flex-col gap-6 md:h-screen">
+    <div className="flex h-fit w-full flex-col gap-6">
       <div className="font-primary p-6 text-6xl text-white md:p-8">
         <span className="text-(--grey)">Featured</span> Projects
       </div>
-      <div className="flex flex-col w-full items-center gap-4">
+      <div className="flex w-full flex-col items-center gap-4">
         {Object.entries(projects).map(([key, project]) => (
-          <ProjectCard key={key} {...project} stack={project.stack.join(", ")} tags={project.tags.join(", ")} />
+          <ProjectCard
+            key={key}
+            {...project}
+            stack={project.stack.join(", ")}
+            tags={project.tags.join(", ")}
+          />
         ))}
       </div>
     </div>
