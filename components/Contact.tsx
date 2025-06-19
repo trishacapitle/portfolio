@@ -39,7 +39,7 @@ const Contact = () => {
     if (!form.current) return;
 
     emailjs
-      .sendForm("service_trishacapitle", "YOUR_TEMPLATE_ID", form.current, {
+      .sendForm("service_9al51q1", "template_n6to8yb", form.current, {
         publicKey: "BRMXlPTOfxtLLJWhJ",
       })
       .then(
