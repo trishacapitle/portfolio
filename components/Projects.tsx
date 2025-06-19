@@ -6,9 +6,9 @@ const Projects = () => {
       title: "Project One",
       description:
         "This is a description of project one. It does many things and is very useful.",
-      stack: ["React, Node.js, Express"],
+      stack: "React, Node.js, Express",
       image: "/portrait.png",
-      tags: ["Conceptual Work"],
+      tags: "Conceptual Work",
       preview: "https://example.com/preview1",
       github: "https://github.com/example/project-one",
     },
@@ -16,9 +16,9 @@ const Projects = () => {
       title: "Project Two",
       description:
         "This is a description of project two. It is even better than the first one.",
-      stack: ["Vue, Django"],
+      stack: "Vue, Django",
       image: "/portrait.png",
-      tags: ["Conceptual Work"],
+      tags: "Conceptual Work",
       preview: "https://example.com/preview1",
       github: "https://github.com/example/project-two",
     },
@@ -34,8 +34,6 @@ const Projects = () => {
           <ProjectCard
             key={key}
             {...project}
-            stack={project.stack.join(", ")}
-            tags={project.tags.join(", ")}
           />
         ))}
       </div>
