@@ -9,6 +9,8 @@ import {
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { useRef } from 'react';
+import emailjs from '@emailjs/browser'
 
 gsap.registerPlugin(useGSAP, ScrollTrigger);
 
@@ -28,6 +30,27 @@ const Contact = () => {
       ease: "power2.out",
     });
   });
+
+  const form = useRef<HTMLFormElement>(null);
+
+  const sendEmail = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+
+    if (!form.current) return;
+
+    emailjs
+      .sendForm("service_trishacapitle", "YOUR_TEMPLATE_ID", form.current, {
+        publicKey: "BRMXlPTOfxtLLJWhJ",
+      })
+      .then(
+        () => {
+          console.log("SUCCESS!");
+        },
+        (error) => {
+          console.log("FAILED...", error.text);
+        },
+      );
+  };
 
   return (
     <div className="trigger">
@@ -65,15 +88,17 @@ const Contact = () => {
             </div>
           </div>
           <p className="font-secondary flex items-center gap-4 py-10">
-            <BiCopyright /> 2025 AshDev
-          </p>
-        </div>
-        <div className="form font-secondary flex w-full flex-col text-white md:w-[50%]">
+            <BiCopyright /> 2025 AshDev </p>
+        <form
+          ref={form}
+          onSubmit={sendEmail}
+          className="form font-secondary flex w-full flex-col text-white md:w-[50%]"
+        >
           <label htmlFor="name" className="text-sm text-(--grey)">
             Name
           </label>
           <input
-            id="name"
+            name="name"
             type="text"
             placeholder="John Doe"
             className="mt-2 mb-4 rounded-sm border border-(--grey)/50 bg-(--grey)/10 px-4 py-2 placeholder:text-(--grey)"
@@ -82,16 +107,16 @@ const Contact = () => {
             Email
           </label>
           <input
-            id="email"
+            name="email"
             type="text"
             placeholder="johndoe@email.com"
             className="mt-2 mb-4 rounded-sm border border-(--grey)/50 bg-(--grey)/10 px-4 py-2 placeholder:text-(--grey)"
           />
-          <label htmlFor="subject" className="text-sm text-(--grey)">
+          <label htmlFor="title" className="text-sm text-(--grey)">
             Subject
           </label>
           <input
-            id="subject"
+            name="title"
             type="text"
             className="mt-2 mb-4 rounded-sm border border-(--grey)/50 bg-(--grey)/10 px-4 py-2 placeholder:text-white"
           />
@@ -99,13 +124,17 @@ const Contact = () => {
             Message
           </label>
           <textarea
-            id="message"
+            name="message"
             className="mt-2 mb-8 h-40 rounded-sm border border-(--grey)/50 bg-(--grey)/10 px-4 py-2 placeholder:text-white"
           />
-          <button className="button font-primary flex w-fit items-center gap-2 rounded-lg border border-gray-500 bg-gray-600/25 py-2 px-4 text-lg leading-0 tracking-wide text-white backdrop-blur-sm backdrop-filter transition-colors duration-300 hover:bg-gray-400/25 md:gap-4 md:p-4 md:px-6 md:text-2xl">
+          <button
+            type="submit"
+            className="button font-primary flex w-fit items-center gap-2 rounded-lg border border-gray-500 bg-gray-600/25 py-2 px-4 text-lg leading-0 tracking-wide text-white backdrop-blur-sm backdrop-filter transition-colors duration-300 hover:bg-gray-400/25 md:gap-4 md:p-4 md:px-6 md:text-2xl"
+          >
             Send Message
             <BiPaperPlane size={20} />
           </button>
+        </form>
         </div>
       </div>
       <div className="p-6">
