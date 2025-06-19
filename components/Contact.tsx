@@ -9,48 +9,33 @@ import {
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { useRef } from 'react';
-import emailjs from '@emailjs/browser'
 
 gsap.registerPlugin(useGSAP, ScrollTrigger);
 
 const Contact = () => {
-  useGSAP(() => {
-    gsap.from(".connect, form", {
-      scrollTrigger: {
-        trigger: ".trigger",
-        start: "top top",
-        end: "bottom top",
-        markers: true,
-        scrub: true,
-      },
-      x: 200,
-      opacity: 0,
-      duration: 2,
-      ease: "power2.out",
-    });
+ 
+useGSAP(() => {
+  gsap.from(".connect, .copyright", {
+    scrollTrigger: {
+      trigger: ".trigger",
+      start: "top 50%",
+    },
+    x: -200,
+    opacity: 0,
+    duration: 2,
+    ease: "power2.out",
   });
-
-  const form = useRef<HTMLFormElement>(null);
-
-  const sendEmail = (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-
-    if (!form.current) return;
-
-    emailjs
-      .sendForm("service_9al51q1", "template_n6to8yb", form.current, {
-        publicKey: "BRMXlPTOfxtLLJWhJ",
-      })
-      .then(
-        () => {
-          console.log("SUCCESS!");
-        },
-        (error) => {
-          console.log("FAILED...", error.text);
-        },
-      );
-  };
+  gsap.from(".form", {
+    scrollTrigger: {
+      trigger: ".trigger",
+      start: "top 50%",
+    },
+    x: 200,
+    opacity: 0,
+    duration: 2,
+    ease: "power2.out",
+  });
+});
 
   return (
     <div className="trigger">
@@ -87,18 +72,16 @@ const Contact = () => {
               </a>
             </div>
           </div>
-          <p className="font-secondary flex items-center gap-4 py-10">
-            <BiCopyright /> 2025 AshDev </p>
-        <form
-          ref={form}
-          onSubmit={sendEmail}
-          className="form font-secondary flex w-full flex-col text-white md:w-[50%]"
-        >
+          <p className="copyright font-secondary flex items-center gap-4 py-10">
+            <BiCopyright /> 2025 AshDev
+          </p>
+        </div>
+        <div className="form font-secondary flex w-full flex-col text-white md:w-[50%]">
           <label htmlFor="name" className="text-sm text-(--grey)">
             Name
           </label>
           <input
-            name="name"
+            id="name"
             type="text"
             placeholder="John Doe"
             className="mt-2 mb-4 rounded-sm border border-(--grey)/50 bg-(--grey)/10 px-4 py-2 placeholder:text-(--grey)"
@@ -107,16 +90,16 @@ const Contact = () => {
             Email
           </label>
           <input
-            name="email"
+            id="email"
             type="text"
             placeholder="johndoe@email.com"
             className="mt-2 mb-4 rounded-sm border border-(--grey)/50 bg-(--grey)/10 px-4 py-2 placeholder:text-(--grey)"
           />
-          <label htmlFor="title" className="text-sm text-(--grey)">
+          <label htmlFor="subject" className="text-sm text-(--grey)">
             Subject
           </label>
           <input
-            name="title"
+            id="subject"
             type="text"
             className="mt-2 mb-4 rounded-sm border border-(--grey)/50 bg-(--grey)/10 px-4 py-2 placeholder:text-white"
           />
@@ -124,17 +107,13 @@ const Contact = () => {
             Message
           </label>
           <textarea
-            name="message"
+            id="message"
             className="mt-2 mb-8 h-40 rounded-sm border border-(--grey)/50 bg-(--grey)/10 px-4 py-2 placeholder:text-white"
           />
-          <button
-            type="submit"
-            className="button font-primary flex w-fit items-center gap-2 rounded-lg border border-gray-500 bg-gray-600/25 py-2 px-4 text-lg leading-0 tracking-wide text-white backdrop-blur-sm backdrop-filter transition-colors duration-300 hover:bg-gray-400/25 md:gap-4 md:p-4 md:px-6 md:text-2xl"
-          >
+          <button className="button font-primary flex w-fit items-center gap-2 rounded-lg border border-gray-500 bg-gray-600/25 px-4 py-2 text-lg leading-0 tracking-wide text-white backdrop-blur-sm backdrop-filter transition-colors duration-300 hover:bg-gray-400/25 md:gap-4 md:p-4 md:px-6 md:text-2xl">
             Send Message
             <BiPaperPlane size={20} />
           </button>
-        </form>
         </div>
       </div>
       <div className="p-6">
