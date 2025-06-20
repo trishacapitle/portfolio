@@ -2,10 +2,10 @@
 
 import Image from "next/image";
 import {
-	BiLogoLinkedinSquare,
-	BiLogoGithub,
-	BiPaperPlane,
-	BiArrowToBottom
+  BiLogoLinkedinSquare,
+  BiLogoGithub,
+  BiPaperPlane,
+  BiArrowToBottom,
 } from "react-icons/bi";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
@@ -15,11 +15,10 @@ import Button from "./ui/Button";
 gsap.registerPlugin(useGSAP, ScrollTrigger);
 
 const Hero = () => {
-	useGSAP(() => {
+  useGSAP(() => {
+    const tl = gsap.timeline();
 
-		const tl = gsap.timeline();
-
-		tl.fromTo(
+    tl.fromTo(
       ".hi",
       { y: -50, opacity: 0 },
       { y: 0, opacity: 1, duration: 1, ease: "power2.out" },
@@ -51,20 +50,20 @@ const Hero = () => {
       .to(".tri", { delay: 1, opacity: 0 }, "-=1")
       .to(".a", { x: -120, ease: "elastic", duration: 1.5 }, "-=0.5")
       .to(".s, .h", { duration: 1 }, "<");
-		
-		gsap.to(".download", {
-			y: -8,
-			ease: "power1.in",
-			yoyo: true,
-			repeat: -1,
-		})
 
-		gsap.set(".section", {
-			visibility: "hidden",
-			opacity: 0,
-		});
+    gsap.to(".download", {
+      y: -8,
+      ease: "power1.in",
+      yoyo: true,
+      repeat: -1,
+    });
 
-		const tl2 = gsap.timeline({
+    gsap.set(".section", {
+      visibility: "hidden",
+      opacity: 0,
+    });
+
+    const tl2 = gsap.timeline({
       scrollTrigger: {
         trigger: ".hero",
         start: "top top",
@@ -74,7 +73,7 @@ const Hero = () => {
       },
     });
 
-		tl2
+    tl2
       .to(".image", {
         xPercent: -80,
         duration: 2,
@@ -127,16 +126,12 @@ const Hero = () => {
         },
         "-=1",
       )
-      .to(
-        ".section",
-        {
-          duration: 2,
-        }
-      );
-	}, []);
-	
+      .to(".section", {
+        duration: 2,
+      });
+  }, []);
 
-	return (
+  return (
     <div className="hero relative flex h-screen w-full flex-col justify-center md:flex-row">
       {/* Left Column */}
       <div className="column1 flex h-fit flex-col justify-center px-6 md:h-full md:w-[50%] md:px-8">
@@ -163,14 +158,14 @@ const Hero = () => {
           development.
         </div>
 
-        <div className="actions mt-4 flex items-center gap-2 md:gap-3 ">
+        <div className="actions mt-4 flex items-center gap-2 md:gap-3">
           <Button
             className="button text-2xl md:text-3xl"
             title="Contact Me"
-            icon={<BiPaperPlane size={30} />}
+            icon={<BiPaperPlane className="h-5 w-5 md:h-7 md:w-7" />}
           />
           <a
-            className="button"
+            className="button duration-200 ease-in-out hover:scale-110"
             href="https://www.linkedin.com/in/trisha-capitle/"
             target="_blank"
             rel="noopener noreferrer"
@@ -178,7 +173,7 @@ const Hero = () => {
             <BiLogoLinkedinSquare size={40} color="white" />
           </a>
           <a
-            className="button"
+            className="button duration-200 ease-in-out hover:scale-110"
             href="https://github.com/trishacapitle"
             target="_blank"
             rel="noopener noreferrer"
@@ -200,14 +195,17 @@ const Hero = () => {
         />
         <Button
           className="resume absolute right-40 bottom-30 w-fit text-2xl md:text-3xl"
-          title="RESUME"
+          title="Resume"
           icon={
-            <BiArrowToBottom size={30} color="white" className="download" />
+            <BiArrowToBottom
+              color="white"
+              className="download h-5 w-5 md:h-7 md:w-7"
+            />
           }
         />
       </div>
 
-      <div className="section absolute right-0 bottom-20 mx-4 max-w-xl">
+      <div className="section absolute right-0 bottom-20 mx-6 max-w-xl">
         <div className="font-primary text-xl tracking-widest text-(--grey) md:text-5xl">
           2024-2025
         </div>
