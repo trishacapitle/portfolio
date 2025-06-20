@@ -13,10 +13,9 @@ import { useRef } from "react";
 import Button from "./ui/Button";
 import emailjs from "@emailjs/browser";
 
-gsap.registerPlugin(useGSAP, ScrollTrigger);
+gsap.registerPlugin(ScrollTrigger);
 
 const Contact = () => {
- 
 useGSAP(() => {
   gsap.from(".connect, .copyright", {
     scrollTrigger: {
@@ -67,7 +66,8 @@ const sendEmail = (e: React.FormEvent<HTMLFormElement>) => {
         (error) => {
           console.log("FAILED...", error.text);
         },
-      );
+    );
+      form.current.reset();
   } else {
     console.log("Form reference is null.");
   }
@@ -97,13 +97,13 @@ const sendEmail = (e: React.FormEvent<HTMLFormElement>) => {
               <a href="">
                 <BiLogoLinkedin
                   size={30}
-                  className="duration-150 ease-in-out hover:scale-110"
+                  className="duration-200 ease-in-out hover:scale-110"
                 />
               </a>
               <a href="">
                 <BiLogoGithub
                   size={30}
-                  className="duration-150 ease-in-out hover:scale-110"
+                  className="duration-200 ease-in-out hover:scale-110"
                 />
               </a>
             </div>
@@ -155,9 +155,9 @@ const sendEmail = (e: React.FormEvent<HTMLFormElement>) => {
             className="mt-2 mb-8 h-40 rounded-sm border border-(--grey)/50 bg-(--grey)/10 px-4 py-2 placeholder:text-white"
           />
           <Button
-            className="w-fit text-xl md:text-2xl"
+            className="submit-btn w-fit text-xl md:text-2xl"
             title="Send Message"
-            icon={<BiPaperPlane className="w-4 h-4 md:w-6 md:h-6" />}
+            icon={<BiPaperPlane className="h-4 w-4 md:h-6 md:w-6" />}
           />
         </form>
       </div>
