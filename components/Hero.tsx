@@ -10,6 +10,7 @@ import {
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import Button from "./ui/Button";
 
 gsap.registerPlugin(useGSAP, ScrollTrigger);
 
@@ -162,11 +163,12 @@ const Hero = () => {
           development.
         </div>
 
-        <div className="actions mt-4 flex items-center gap-2 md:gap-3">
-          <button className="button font-primary flex items-center gap-2 rounded-lg border border-gray-500 bg-gray-600/25 p-3 text-2xl leading-0 text-white backdrop-blur-sm backdrop-filter transition-colors duration-300 hover:bg-gray-400/25 md:gap-4 md:p-4 md:px-6 md:text-3xl">
-            Contact Me
-            <BiPaperPlane size={30} />
-          </button>
+        <div className="actions mt-4 flex items-center gap-2 md:gap-3 ">
+          <Button
+            className="button text-2xl md:text-3xl"
+            title="Contact Me"
+            icon={<BiPaperPlane size={30} />}
+          />
           <a
             className="button"
             href="https://www.linkedin.com/in/trisha-capitle/"
@@ -196,13 +198,16 @@ const Hero = () => {
           draggable={false}
           className="absolute bottom-0 h-full w-full object-cover"
         />
-        <button className="resume font-primary absolute right-40 bottom-30 z-99 flex items-center gap-1 rounded-lg border border-gray-500 bg-gray-600/10 p-3 text-2xl text-white backdrop-blur-sm backdrop-filter transition-colors duration-300 hover:bg-gray-400/25 md:right-60 md:bottom-40 md:gap-2 md:p-4 md:px-6 md:text-3xl">
-          Resume
-          <BiArrowToBottom size={30} color="white" className="download" />
-        </button>
+        <Button
+          className="resume absolute right-40 bottom-30 w-fit text-2xl md:text-3xl"
+          title="RESUME"
+          icon={
+            <BiArrowToBottom size={30} color="white" className="download" />
+          }
+        />
       </div>
 
-      <div className="section absolute right-0 bottom-20 max-w-xl mx-4">
+      <div className="section absolute right-0 bottom-20 mx-4 max-w-xl">
         <div className="font-primary text-xl tracking-widest text-(--grey) md:text-5xl">
           2024-2025
         </div>
