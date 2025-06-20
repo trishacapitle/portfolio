@@ -27,7 +27,7 @@ const TechStack = () => {
     "shopify",
   ];
 
-  gsap.registerPlugin(useGSAP, ScrollTrigger);
+  gsap.registerPlugin(ScrollTrigger);
 
   useGSAP(() => {
     gsap.set(".icon, .subtitle", {
