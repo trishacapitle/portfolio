@@ -9,6 +9,8 @@ import {
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { useRef } from "react";
+import emailjs from "@emailjs/browser";
 
 gsap.registerPlugin(useGSAP, ScrollTrigger);
 
@@ -36,6 +38,29 @@ useGSAP(() => {
     ease: "power2.out",
   });
 });
+  
+const form = useRef<HTMLFormElement>(null);
+
+const sendEmail = (e: React.FormEvent<HTMLFormElement>) => {
+  e.preventDefault();
+
+  if (form.current) {
+    emailjs
+      .sendForm("service_9al51q1", "template_7j2l8ec", form.current, {
+        publicKey: "BRMXlPTOfxtLLJWhJ",
+      })
+      .then(
+        () => {
+          console.log("SUCCESS!");
+        },
+        (error) => {
+          console.log("FAILED...", error.text);
+        },
+      );
+  } else {
+    console.log("Form reference is null.");
+  }
+};
 
   return (
     <div className="trigger">
@@ -76,12 +101,12 @@ useGSAP(() => {
             <BiCopyright /> 2025 AshDev
           </p>
         </div>
-        <div className="form font-secondary flex w-full flex-col text-white md:w-[50%]">
+        <form ref={form} onSubmit={sendEmail} className="form font-secondary flex w-full flex-col text-white md:w-[50%]">
           <label htmlFor="name" className="text-sm text-(--grey)">
             Name
           </label>
           <input
-            id="name"
+            name="name"
             type="text"
             placeholder="John Doe"
             className="mt-2 mb-4 rounded-sm border border-(--grey)/50 bg-(--grey)/10 px-4 py-2 placeholder:text-(--grey)"
@@ -90,16 +115,16 @@ useGSAP(() => {
             Email
           </label>
           <input
-            id="email"
+            name="email"
             type="text"
             placeholder="johndoe@email.com"
             className="mt-2 mb-4 rounded-sm border border-(--grey)/50 bg-(--grey)/10 px-4 py-2 placeholder:text-(--grey)"
           />
-          <label htmlFor="subject" className="text-sm text-(--grey)">
+          <label htmlFor="title" className="text-sm text-(--grey)">
             Subject
           </label>
           <input
-            id="subject"
+            name="title"
             type="text"
             className="mt-2 mb-4 rounded-sm border border-(--grey)/50 bg-(--grey)/10 px-4 py-2 placeholder:text-white"
           />
@@ -107,14 +132,14 @@ useGSAP(() => {
             Message
           </label>
           <textarea
-            id="message"
+            name="message"
             className="mt-2 mb-8 h-40 rounded-sm border border-(--grey)/50 bg-(--grey)/10 px-4 py-2 placeholder:text-white"
           />
           <button className="button font-primary flex w-fit items-center gap-2 rounded-lg border border-gray-500 bg-gray-600/25 px-4 py-2 text-lg leading-0 tracking-wide text-white backdrop-blur-sm backdrop-filter transition-colors duration-300 hover:bg-gray-400/25 md:gap-4 md:p-4 md:px-6 md:text-2xl">
             Send Message
             <BiPaperPlane size={20} />
           </button>
-        </div>
+        </form>
       </div>
       <div className="p-6">
         <hr className="mb-4 border border-(--grey)" />
