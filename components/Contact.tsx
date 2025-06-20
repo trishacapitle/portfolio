@@ -38,6 +38,16 @@ useGSAP(() => {
     duration: 2,
     ease: "power2.out",
   });
+  gsap.from(".footer", {
+    scrollTrigger: {
+      trigger: ".trigger",
+      start: "top 50%",
+    },
+    y: 200,
+    opacity: 0,
+    duration: 3,
+    ease: "power2.out",
+  });
 });
   
 const form = useRef<HTMLFormElement>(null);
@@ -147,11 +157,11 @@ const sendEmail = (e: React.FormEvent<HTMLFormElement>) => {
           <Button
             className="w-fit text-xl md:text-2xl"
             title="Send Message"
-            icon={<BiPaperPlane size={20} />}
+            icon={<BiPaperPlane className="w-4 h-4 md:w-6 md:h-6" />}
           />
         </form>
       </div>
-      <div className="p-6 text-xs md:text-base">
+      <div className="footer p-6 text-xs md:text-base">
         <hr className="mb-4 border border-(--grey)" />
         <p className="font-secondary text-center text-(--grey)">
           Designed in <span className="text-white">Figma</span>, coded on{" "}
