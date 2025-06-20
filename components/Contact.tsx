@@ -10,6 +10,7 @@ import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useRef } from "react";
+import Button from "./ui/Button";
 import emailjs from "@emailjs/browser";
 
 gsap.registerPlugin(useGSAP, ScrollTrigger);
@@ -101,13 +102,18 @@ const sendEmail = (e: React.FormEvent<HTMLFormElement>) => {
             <BiCopyright /> 2025 AshDev
           </p>
         </div>
-        <form ref={form} onSubmit={sendEmail} className="form font-secondary flex w-full flex-col text-white md:w-[50%]">
+        <form
+          ref={form}
+          onSubmit={sendEmail}
+          className="form font-secondary flex w-full flex-col text-white md:w-[50%]"
+        >
           <label htmlFor="name" className="text-sm text-(--grey)">
             Name
           </label>
           <input
             name="name"
             type="text"
+            required
             placeholder="John Doe"
             className="mt-2 mb-4 rounded-sm border border-(--grey)/50 bg-(--grey)/10 px-4 py-2 placeholder:text-(--grey)"
           />
@@ -117,6 +123,7 @@ const sendEmail = (e: React.FormEvent<HTMLFormElement>) => {
           <input
             name="email"
             type="text"
+            required
             placeholder="johndoe@email.com"
             className="mt-2 mb-4 rounded-sm border border-(--grey)/50 bg-(--grey)/10 px-4 py-2 placeholder:text-(--grey)"
           />
@@ -126,6 +133,7 @@ const sendEmail = (e: React.FormEvent<HTMLFormElement>) => {
           <input
             name="title"
             type="text"
+            required
             className="mt-2 mb-4 rounded-sm border border-(--grey)/50 bg-(--grey)/10 px-4 py-2 placeholder:text-white"
           />
           <label htmlFor="message" className="text-sm text-(--grey)">
@@ -133,15 +141,17 @@ const sendEmail = (e: React.FormEvent<HTMLFormElement>) => {
           </label>
           <textarea
             name="message"
+            required
             className="mt-2 mb-8 h-40 rounded-sm border border-(--grey)/50 bg-(--grey)/10 px-4 py-2 placeholder:text-white"
           />
-          <button className="button font-primary flex w-fit items-center gap-2 rounded-lg border border-gray-500 bg-gray-600/25 px-4 py-2 text-lg leading-0 tracking-wide text-white backdrop-blur-sm backdrop-filter transition-colors duration-300 hover:bg-gray-400/25 md:gap-4 md:p-4 md:px-6 md:text-2xl">
-            Send Message
-            <BiPaperPlane size={20} />
-          </button>
+          <Button
+            className="w-fit text-xl md:text-2xl"
+            title="Send Message"
+            icon={<BiPaperPlane size={20} />}
+          />
         </form>
       </div>
-      <div className="p-6">
+      <div className="p-6 text-xs md:text-base">
         <hr className="mb-4 border border-(--grey)" />
         <p className="font-secondary text-center text-(--grey)">
           Designed in <span className="text-white">Figma</span>, coded on{" "}
