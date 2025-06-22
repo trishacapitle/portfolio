@@ -8,29 +8,31 @@ const Navbar = () => {
 	useGSAP(() => {
 		gsap.from (".navbar",{ 
 			opacity: 0,
-			y: -20,
 			duration: 1.5,
 })
 	})
 
 	return (
-		<div className="navbar w-full h-16 justify-between items-center flex p-6 md:p-8">
-			<div className="font-primary text-white text-xl">
-				<span className="text-(--grey)">Ash</span>Dev
-			</div>
-			<ul className="flex gap-6 text-xs md:text-sm font-secondary text-(--grey) ">
-				<li className="hover:text-white duration-100 ease-in-out py-2">
-					About
-				</li>
-				<li className="hover:text-white duration-100 ease-in-out py-2">
-					Experience
-				</li>
-				<li className="hover:text-white duration-100 ease-in-out py-2">
-					Projects
-				</li>
-			</ul>
-		</div>
-	);
+    <div className="navbar flex h-16 w-full items-center justify-between p-6 md:p-8">
+      <div className="font-primary text-xl text-white">
+        <span className="text-(--grey)">Ash</span>Dev
+      </div>
+      <ul className="font-secondary flex gap-6 text-xs text-(--grey) md:text-sm">
+        <li className="py-2 duration-100 ease-in-out hover:text-white">
+          About
+        </li>
+        <li className="py-2 duration-100 ease-in-out hover:text-white">
+          Stack
+        </li>
+        <li className="py-2 duration-100 ease-in-out hover:text-white">
+          Projects
+        </li>
+        <li className="py-2 duration-100 ease-in-out hover:text-white">
+          Contact
+        </li>
+      </ul>
+    </div>
+  );
 };
 
 export default Navbar;
