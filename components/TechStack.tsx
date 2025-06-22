@@ -62,12 +62,12 @@ const TechStack = () => {
         trigger: ".title",
       },
       opacity: 0,
-      x: 400,
+      x: 50,
       duration: 1,
     });
   });
   return (
-    <div className="relative flex h-fit w-full flex-col lg:h-screen">
+    <div className="stack relative flex h-fit w-full flex-col lg:h-screen">
       <div className="title font-primary p-6 text-6xl text-white md:p-8">
         <span className="text-(--grey)">Tech</span> Stack
       </div>
