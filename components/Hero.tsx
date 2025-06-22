@@ -70,6 +70,7 @@ const Hero = () => {
         end: "+=3000",
         scrub: 2,
         pin: true,
+        markers: true,
       },
     });
 
@@ -80,9 +81,8 @@ const Hero = () => {
         ease: "power2.in",
       })
       .to(
-        ".hi, .trisha, .capitle, .description, .actions",
+        ".column1",
         {
-          y: -50,
           opacity: 0,
           duration: 2,
           ease: "power2.in",
@@ -96,7 +96,6 @@ const Hero = () => {
           duration: 2,
           ease: "power2.in",
         },
-        "-=0.5",
       )
       .to(
         ".resume",
