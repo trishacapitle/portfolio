@@ -3,20 +3,21 @@ import ProjectCard from "./ui/ProjectCard";
 const Projects = () => {
   const projects = {
     project1: {
-      title: "Digital Tour Guide System for a Prototype Electric Vehicle",
+      title: "Digital Tour Guide System for an Electric Vehicle Prototype",
       description:
-        "Developed a digital tour guide solution of a touring e-shuttle that automatically narrates destination highlights based on geofence triggers.",
-      stack: "Electron, React, Tailwind",
-      image: "/portrait.png",
+        "A digital tour guide solution of a touring electric shuttle prototype that automatically narrates destination highlights and synchronized slideshow presentations based on geofence triggers, and real-time location tracking.",
+      stack: "Electron, Vite, React, Tailwind",
+      image: "/digital-tour-guide-system.jpg",
       tags: "Contract",
-      preview: "https://example.com/preview1",
+      github:
+        "https://github.com/trishacapitle/digital-tour-guide-system",
     },
     project2: {
       title:
         "Battery and Solar Monitoring System with Custom Android App Syncing",
       description:
-        "Developed an all in one battery and solar monitoring system for a prototype electric vehicle that have sync functionality with it's custom anroid app.",
-      stack: "Electron, React, React Native, Tailwind",
+        "Developed an all in one battery and solar monitoring system for an electric vehicle prototype with sync functionality with it's custom android app.",
+      stack: "Electron, Vite, React, React Native, Tailwind",
       image: "/portrait.png",
       tags: "Contract",
       preview: "https://example.com/preview1",
