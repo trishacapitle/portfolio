@@ -1,6 +1,27 @@
 import ProjectCard from "./ui/ProjectCard";
+import gsap from "gsap";
+import ScrollTrigger from "gsap/ScrollTrigger";
+import { useGSAP } from "@gsap/react";
+
+gsap.registerPlugin(ScrollTrigger);
 
 const Projects = () => {
+  useGSAP(() => {
+    gsap.from(".cards", {
+      scrollTrigger: {
+        markers: true,
+        scrub: true,
+        trigger: ".card-container",
+        start: "top 60%",
+        end: "bottom 80%",
+      },
+      stagger: 0.5,
+      y: 100,
+      scale: 0.70,
+      opacity: 0,
+  })
+})
+
   const projects = {
     project1: {
       title: "Digital Tour Guide System for an Electric Vehicle Prototype",
@@ -18,7 +39,7 @@ const Projects = () => {
       description:
         "Developed an all in one battery and solar monitoring system for an electric vehicle prototype with sync functionality with it's custom android app.",
       stack: "Electron, Vite, React, React Native, Tailwind",
-      image: "/portrait.png",
+      image: "/battery-solar-monitor.jpg",
       tags: "Contract",
       preview: "https://example.com/preview1",
       github: "https://github.com/example/project-two",
@@ -65,17 +86,17 @@ const Projects = () => {
   };
 
   return (
-    <div className="flex h-fit w-full flex-col gap-6 mb-20">
-      <div className="font-primary p-6 text-6xl text-white md:p-8">
+    <div className="mb-20 flex h-fit w-full flex-col gap-6">
+      <div className="title font-primary p-6 text-6xl text-white md:p-8">
         <span className="text-(--grey)">Featured</span> Projects
       </div>
-      <div className="flex w-full flex-col items-center gap-4">
-        {Object.entries(projects).map(([key, project]) => (
-          <ProjectCard
-            key={key}
-            {...project}
-          />
-        ))}
+      <div className="card-container flex w-full flex-col items-center gap-4">
+          {Object.entries(projects).map(([key, project]) => (
+            <div className="cards" key={key}>
+              <ProjectCard {...project} />
+            </div>
+          ))}
+        
       </div>
     </div>
   );
