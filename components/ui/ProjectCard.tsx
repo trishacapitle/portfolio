@@ -23,7 +23,7 @@ const ProjectCard = (project: ProjectCardProps) => {
           fill
           className="object-cover"
         />
-        <p className="absolute top-2 left-2 rounded-full bg-[#0A0A0A] p-2 text-xs">
+        <p className="absolute top-2 left-2 rounded-full bg-[#0A0A0A] p-2 text-tiny">
           {tags}
         </p>
       </div>
