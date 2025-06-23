@@ -28,3 +28,19 @@ li:hover {
 	border-color: #fff;
 	transition: 0.5s ease-in-out;
 }
+
+html, body {
+cursor:none;
+}
+
+.custom-cursor {
+	height: 20px;
+  width: 20px;
+  border-radius: 50%;
+  background-color: white;
+  position: fixed; 
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  z-index: 99999999; 
+}
