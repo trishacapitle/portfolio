@@ -30,8 +30,7 @@ const Projects = () => {
       stack: "Electron, Vite, React, Tailwind",
       image: "/digital-tour-guide-system.jpg",
       tags: "Contract",
-      github:
-        "https://github.com/trishacapitle/digital-tour-guide-system",
+      github: "https://github.com/trishacapitle/digital-tour-guide-system",
     },
     project2: {
       title:
@@ -45,9 +44,10 @@ const Projects = () => {
       github: "https://github.com/example/project-two",
     },
     project3: {
-      title: "Creative Landing Page",
-      description: "A landing page with smooth and creative animations.",
-      stack: "Next.js, React, GSAP",
+      title: "GSAP Creative Animations Compilation",
+      description:
+        "Compiled recreations of GSAP animations of award-winning websites from AWWWARDS.",
+      stack: "Vite, React, GSAP",
       image: "/portrait.png",
       tags: "Concept",
       preview: "https://example.com/preview1",
@@ -68,16 +68,6 @@ const Projects = () => {
       description:
         "Engaging webflow website with rich animations utilizing power of GSAP.",
       stack: "Webflow, GSAP",
-      image: "/portrait.png",
-      tags: "Concept",
-      preview: "https://example.com/preview1",
-      github: "https://github.com/example/project-two",
-    },
-    project6: {
-      title: "Custom Shopify Theme",
-      description:
-        "A custom shopify theme with rich animations and easy implementation.",
-      stack: "Liquid, Shopify, GSAP",
       image: "/portrait.png",
       tags: "Concept",
       preview: "https://example.com/preview1",
