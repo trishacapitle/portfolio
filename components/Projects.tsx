@@ -9,7 +9,6 @@ const Projects = () => {
   useGSAP(() => {
     gsap.from(".cards", {
       scrollTrigger: {
-        markers: true,
         scrub: true,
         trigger: ".card-container",
         start: "top 60%",
