@@ -44,3 +44,28 @@ cursor:none;
   pointer-events: none;
   z-index: 99999999; 
 }
+
+.loader-text span {
+	display: inline-block;
+	position: relative;
+	line-height: 1;
+	transform: translateY(120px);
+	--clipPath: inset(100% 0 0 0);
+	overflow: hidden;  
+}
+
+.loader-text span::before {
+	content: attr(data-text);
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	background-image: linear-gradient(45deg, #fff, #929292);
+	background-clip: text;
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+	clip-path: var(--clipPath);
+	-webkit-clip-path: var(--clipPath);
+	transition: clip-path 0s;
+}

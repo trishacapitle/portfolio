@@ -17,12 +17,45 @@ const Hero = () => {
 
   useGSAP(() => {
     const tl = gsap.timeline();
+    const letters = document.querySelectorAll(".loader-text span")
 
-    tl.fromTo(
-      ".hi",
-      { y: -50, opacity: 0 },
-      { y: 0, opacity: 1, duration: 1, ease: "power2.out" },
-    )
+    tl.to(letters, {
+      duration: 0.8,
+      y: 0,
+      stagger: 0.05,
+      ease: "power2.out",
+    })
+      .to(letters, {
+        "--clipPath": "inset(0% 0 0 0)",
+        duration: 0.8,
+        delay: 0.3,
+        stagger: 0.05,
+        ease: "power1.inOut",
+      })
+      .to(letters, {
+        duration: 0.6,
+        y: 100,
+        opacity: 0,
+        stagger: 0.05,
+        delay: 0.5,
+        ease: "power2.in",
+      })
+      .to(
+        (".loader"),
+        {
+          y: -100,
+          opacity: 0,
+          duration: 0.7,
+          ease: "power2.inOut",
+          pointerEvents: "none",
+        },
+        "-=0.3",
+      )
+      .fromTo(
+        ".hi",
+        { y: -50, opacity: 0 },
+        { y: 0, opacity: 1, duration: 1, ease: "power2.out" },
+      )
       .fromTo(
         ".trisha",
         { y: -50, opacity: 0 },
@@ -134,6 +167,18 @@ const Hero = () => {
 
   return (
     <div className="hero relative flex h-screen w-full flex-col justify-center md:flex-row">
+      {/* Loader */}
+      <div className="loader absolute -top-16 z-99 flex h-screen w-screen items-center justify-center bg-[#121212] ">
+        <div className="loader-text font-primary text-white/20 text-[6.5rem] overflow-hidden leading-none tracking-wider">
+          <span data-text="A">A</span>
+          <span data-text="S">S</span>
+          <span data-text="H">H</span>
+          <span data-text="D">D</span>
+          <span data-text="E">E</span>
+          <span data-text="V">V</span>
+        </div>
+      </div>
+
       {/* Left Column */}
       <div className="column1 flex h-fit flex-col justify-center px-6 md:h-full md:w-[50%] md:px-8">
         <div className="hi font-primary text-3xl text-white md:text-5xl">
@@ -196,7 +241,7 @@ const Hero = () => {
         />
         <a href="/resume.pdf" download>
           <Button
-            className="resume -translate-x-1/2 bottom-30 absolute left-1/2 w-fit text-2xl md:text-3xl"
+            className="resume absolute bottom-30 left-1/2 w-fit -translate-x-1/2 text-2xl md:text-3xl"
             title="Resume"
             icon={
               <BiArrowToBottom
