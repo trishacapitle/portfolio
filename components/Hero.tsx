@@ -12,9 +12,9 @@ import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Button from "./ui/Button";
 
-gsap.registerPlugin(ScrollTrigger);
-
 const Hero = () => {
+  gsap.registerPlugin(useGSAP, ScrollTrigger);
+
   useGSAP(() => {
     const tl = gsap.timeline();
 
@@ -33,6 +33,12 @@ const Hero = () => {
         ".capitle",
         { y: -50, opacity: 0 },
         { y: 0, opacity: 1, duration: 1, ease: "power2.out" },
+        "-=0.5",
+      )
+      .fromTo(
+        ".ashdev, .resume",
+        { opacity: 0 },
+        { opacity: 1, duration: 1, ease: "power2.out" },
         "-=0.5",
       )
       .fromTo(
@@ -88,14 +94,11 @@ const Hero = () => {
         },
         "<",
       )
-      .to(
-        ".column1",
-        {
-          visibility: "hidden",
-          duration: 2,
-          ease: "power2.in",
-        },
-      )
+      .to(".column1", {
+        visibility: "hidden",
+        duration: 2,
+        ease: "power2.in",
+      })
       .to(
         ".resume",
         {
@@ -187,21 +190,22 @@ const Hero = () => {
           src="/portrait.png"
           width={800}
           height={800}
-          alt="Picture of the author"
+          alt="portrait"
           draggable={false}
-          className="absolute bottom-0 h-full w-full object-cover"
+          className="ashdev absolute bottom-0 h-full w-full object-cover"
         />
         <a href="/resume.pdf" download>
-        <Button
-          className="resume absolute right-40 bottom-30 w-fit text-2xl md:text-3xl"
-          title="Resume"
-          icon={
-            <BiArrowToBottom
-              color="white"
-              className="download h-5 w-5 md:h-7 md:w-7"
-            />
-          }
-        /></a>
+          <Button
+            className="resume -translate-x-1/2 bottom-30 absolute left-1/2 w-fit text-2xl md:text-3xl"
+            title="Resume"
+            icon={
+              <BiArrowToBottom
+                color="white"
+                className="download h-5 w-5 md:h-7 md:w-7"
+              />
+            }
+          />
+        </a>
       </div>
 
       <div className="section absolute right-0 bottom-20 mx-6 max-w-xl">
@@ -216,7 +220,7 @@ const Hero = () => {
         </div>
 
         <div className="font-secondary text-sm font-normal text-white md:text-base">
-          Designed and developed 8+ responsive websites, apps, and custom
+          Designed and developed 6+ responsive websites, apps, and custom
           software solutions that met each client’s goals and time constraints.
         </div>
       </div>
