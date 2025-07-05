@@ -3,9 +3,10 @@ import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
 
-gsap.registerPlugin(ScrollTrigger);
 
 const Projects = () => {
+  gsap.registerPlugin(useGSAP, ScrollTrigger);
+
   useGSAP(() => {
     gsap.from(".cards", {
       scrollTrigger: {
@@ -73,7 +74,7 @@ const Projects = () => {
   };
 
   return (
-    <div className="mb-20 flex h-fit w-full flex-col gap-6">
+    <div className="my-20 flex h-fit w-full flex-col gap-6">
       <div className="title font-primary p-6 text-6xl text-white md:p-8">
         <span className="text-(--grey)">Featured</span> Projects
       </div>
