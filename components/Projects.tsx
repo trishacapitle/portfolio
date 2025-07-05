@@ -39,8 +39,6 @@ const Projects = () => {
       stack: "Electron, Vite, React, React Native, Tailwind",
       image: "/battery-solar-monitor.jpg",
       tags: "Contract",
-      preview: "https://example.com/preview1",
-      github: "https://github.com/example/project-two",
     },
     project3: {
       title: "AWWWARDS Web Animations",
@@ -49,7 +47,7 @@ const Projects = () => {
       stack: "Vite, React, GSAP",
       image: "/web-animations.jpg",
       tags: "Concept",
-      preview: "https://example.com/preview1",
+      preview: "https://awwwards-animations.vercel.app",
       github: "https://github.com/trishacapitle/awwwards-animations",
     },
     // project4: {
