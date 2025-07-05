@@ -27,7 +27,7 @@ const TechStack = () => {
     // "shopify",
   ];
 
-  gsap.registerPlugin(ScrollTrigger);
+  gsap.registerPlugin(useGSAP, ScrollTrigger);
 
   useGSAP(() => {
     gsap.set(".icon, .subtitle", {
@@ -45,6 +45,7 @@ const TechStack = () => {
       duration: 1,
       ease: "power1.in",
       stagger: 0.1,
+      y:0,
     });
 
     gsap.to(".subtitle", {
@@ -53,7 +54,8 @@ const TechStack = () => {
       },
       y: 0,
       opacity: 1,
-      duration: 2,
+      dellay: 0.5,
+      duration: 1,
       ease: "power1.in",
     });
 
@@ -67,12 +69,12 @@ const TechStack = () => {
     });
   });
   return (
-    <div className="stack relative flex h-fit w-full flex-col lg:h-screen">
-      <div className="title font-primary p-6 text-6xl text-white md:p-8">
+    <div className="stack relative flex h-fit w-full flex-col lg:h-screen my-20">
+      <div className="title font-primary px-6 py-6 text-6xl text-white md:px-8 md:pt-8">
         <span className="text-(--grey)">Tech</span> Stack
       </div>
 
-      <div className="grid grid-cols-2 gap-4 p-4 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6">
+      <div className="grid grid-cols-2 gap-4 px-4 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6">
         {icons.map((icon) => (
           <div
             key={icon}
@@ -89,7 +91,7 @@ const TechStack = () => {
           </div>
         ))}
       </div>
-      <div className="subtitle font-secondary flex items-center p-12 text-center text-lg text-white md:p-20 md:text-xl">
+      <div className="subtitle font-secondary flex items-center px-12 pt-6 text-center text-lg text-white md:px-20 md:pt-8 md:text-xl">
         Adaptable and quick to master new tools and frameworks, I ensure my tech
         stack evolves with industry trends and continuously refine my approach
         to build efficient, modern websites.
