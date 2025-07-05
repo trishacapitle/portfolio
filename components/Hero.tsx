@@ -191,6 +191,7 @@ const Hero = () => {
           draggable={false}
           className="absolute bottom-0 h-full w-full object-cover"
         />
+        <a href="/resume.pdf" download>
         <Button
           className="resume absolute right-40 bottom-30 w-fit text-2xl md:text-3xl"
           title="Resume"
@@ -200,7 +201,7 @@ const Hero = () => {
               className="download h-5 w-5 md:h-7 md:w-7"
             />
           }
-        />
+        /></a>
       </div>
 
       <div className="section absolute right-0 bottom-20 mx-6 max-w-xl">
