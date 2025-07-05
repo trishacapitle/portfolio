@@ -44,35 +44,35 @@ const Projects = () => {
       github: "https://github.com/example/project-two",
     },
     project3: {
-      title: "GSAP Creative Animations Compilation",
+      title: "AWWWARDS Web Animations",
       description:
-        "Compiled recreations of GSAP animations of award-winning websites from AWWWARDS.",
+        "Compiled recreations of GSAP animations in React from award-winning websites.",
       stack: "Vite, React, GSAP",
-      image: "/portrait.png",
+      image: "/web-animations.jpg",
       tags: "Concept",
       preview: "https://example.com/preview1",
-      github: "https://github.com/example/project-two",
+      github: "https://github.com/trishacapitle/awwwards-animations",
     },
-    project4: {
-      title: "E-Commerce Website; design from Figma Community",
-      description:
-        "Developed front-end of an e-commerce website from a Figma design.",
-      stack: "Next.js, React, Tailwind",
-      image: "/portrait.png",
-      tags: "Concept",
-      preview: "https://example.com/preview1",
-      github: "https://github.com/example/project-two",
-    },
-    project5: {
-      title: "Webflow Landing Page",
-      description:
-        "Engaging webflow website with rich animations utilizing power of GSAP.",
-      stack: "Webflow, GSAP",
-      image: "/portrait.png",
-      tags: "Concept",
-      preview: "https://example.com/preview1",
-      github: "https://github.com/example/project-two",
-    },
+    // project4: {
+    //   title: "E-Commerce Website; design from Figma Community",
+    //   description:
+    //     "Developed front-end of an e-commerce website from a Figma design.",
+    //   stack: "Next.js, React, Tailwind",
+    //   image: "/portrait.png",
+    //   tags: "Concept",
+    //   preview: "https://example.com/preview1",
+    //   github: "https://github.com/example/project-two",
+    // },
+    // project5: {
+    //   title: "Webflow Landing Page",
+    //   description:
+    //     "Engaging webflow website with rich animations utilizing power of GSAP.",
+    //   stack: "Webflow, GSAP",
+    //   image: "/portrait.png",
+    //   tags: "Concept",
+    //   preview: "https://example.com/preview1",
+    //   github: "https://github.com/example/project-two",
+    // },
   };
 
   return (
