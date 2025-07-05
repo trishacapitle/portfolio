@@ -12,12 +12,13 @@ import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useRef, useState } from "react";
 import Button from "./ui/Button";
-// import emailjs from "@emailjs/browser";
+import emailjs from "@emailjs/browser";
 import Modal from "./ui/Modal";
 
-gsap.registerPlugin(ScrollTrigger);
+
 
 const Contact = () => {
+  gsap.registerPlugin(ScrollTrigger);
   useGSAP(() => {
     gsap.from(".connect, .copyright", {
       scrollTrigger: {
@@ -58,24 +59,24 @@ const Contact = () => {
     
     setShowModal(true);
 
-    // if (form.current) {
-    //   emailjs
-    //     .sendForm("service_9al51q1", "template_7j2l8ec", form.current, {
-    //       publicKey: "BRMXlPTOfxtLLJWhJ",
-    //     })
-    //     .then(
-    //       () => {
-    //         console.log("SUCCESS!");
+    if (form.current) {
+      emailjs
+        .sendForm("service_9al51q1", "template_7j2l8ec", form.current, {
+          publicKey: "BRMXlPTOfxtLLJWhJ",
+        })
+        .then(
+          () => {
+            console.log("SUCCESS!");
             
-    //       },
-    //       (error) => {
-    //         console.log("FAILED...", error.text);
-    //       },
-    //     );
-    //   form.current.reset();
-    // } else {
-    //   console.log("Form reference is null.");
-    // }
+          },
+          (error) => {
+            console.log("FAILED...", error.text);
+          },
+        );
+      form.current.reset();
+    } else {
+      console.log("Form reference is null.");
+    }
   };
 
   return (
