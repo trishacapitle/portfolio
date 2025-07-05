@@ -18,7 +18,7 @@ import Modal from "./ui/Modal";
 
 
 const Contact = () => {
-  gsap.registerPlugin(ScrollTrigger);
+  gsap.registerPlugin(useGSAP, ScrollTrigger);
   useGSAP(() => {
     gsap.from(".connect, .copyright", {
       scrollTrigger: {
