@@ -106,7 +106,7 @@ const Hero = () => {
       scrollTrigger: {
         trigger: ".hero",
         start: "top top",
-        end: "+=3000",
+        end: "+=2500",
         scrub: 2,
         pin: true,
       },
