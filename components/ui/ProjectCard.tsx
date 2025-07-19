@@ -43,7 +43,7 @@ const ProjectCard = (project: ProjectCardProps) => {
             <a
               href={preview}
               target="_blank"
-              className="flex cursor-none items-center gap-2 duration-250 ease-in-out hover:scale-105"
+              className="flex cursor-none items-center gap-2 duration-250 ease-in-out hover:-translate-y-1"
             >
               Live Demo <BiLinkExternal fill="white" size={20} />
             </a>
@@ -52,7 +52,7 @@ const ProjectCard = (project: ProjectCardProps) => {
             <a
               href={github}
               target="_blank"
-              className="flex cursor-none items-center gap-2 duration-250 ease-in-out hover:scale-105"
+              className="flex cursor-none items-center gap-2 duration-250 ease-in-out hover:-translate-y-1"
             >
               See on Github <BiLogoGithub fill="white" size={20} />
             </a>
