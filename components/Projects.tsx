@@ -27,7 +27,8 @@ const Projects = () => {
       title: "Digital Tour Guide System for an Electric Vehicle Prototype",
       description:
         "A digital tour guide solution of a touring electric shuttle prototype that automatically narrates destination highlights and synchronized slideshow presentations based on geofence triggers, and real-time location tracking.",
-      stack: "Electron, Vite, React, Tailwind",
+      stack:
+        "Electron, React + Vite, TailwindCSS, Turf.js, MapLibre GL, serialport",
       image: "/digital-tour-guide-system.jpg",
       tags: "Contract",
       github: "https://github.com/trishacapitle/digital-tour-guide-system",
@@ -37,7 +38,7 @@ const Projects = () => {
         "Battery and Solar Monitoring System with Custom Android App Syncing",
       description:
         "Developed an all in one battery and solar monitoring system for an electric vehicle prototype with sync functionality with it's custom android app.",
-      stack: "Electron, Vite, React, React Native, Tailwind",
+      stack: "Electron, React + Vite, React Native, TailwindCSS",
       image: "/battery-solar-monitor.jpg",
       tags: "Contract",
     },
@@ -45,22 +46,22 @@ const Projects = () => {
       title: "AWWWARDS Web Animations",
       description:
         "Compiled recreations of GSAP animations in React from award-winning websites.",
-      stack: "Vite, React, GSAP",
+      stack: "React + Vite, GSAP",
       image: "/web-animations.jpg",
       tags: "Concept",
       preview: "https://awwwards-animations.vercel.app",
       github: "https://github.com/trishacapitle/awwwards-animations",
     },
-    // project4: {
-    //   title: "E-Commerce Website; design from Figma Community",
-    //   description:
-    //     "Developed front-end of an e-commerce website from a Figma design.",
-    //   stack: "Next.js, React, Tailwind",
-    //   image: "/portrait.png",
-    //   tags: "Concept",
-    //   preview: "https://example.com/preview1",
-    //   github: "https://github.com/example/project-two",
-    // },
+    project4: {
+      title: "Clothing E-Commerce Website; design from Figma Community",
+      description:
+        "Built the front-end of an e-commerce website from a Figma UI design.",
+      stack: "React + Vite, TailwindCSS",
+      image: "/clothing-ecommerce.jpg",
+      tags: "Concept",
+      preview: "https://clothing-ecommerce-ashdev.vercel.app",
+      github: "https://github.com/trishacapitle/clothing-ecommerce-frontend",
+    },
     // project5: {
     //   title: "Webflow Landing Page",
     //   description:
