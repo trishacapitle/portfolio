@@ -156,7 +156,7 @@ const Hero = () => {
           opacity: 1,
           duration: 3,
           ease: "power2.in",
-          y: -200,
+          y: -120,
         },
         "-=1",
       )
@@ -180,7 +180,7 @@ const Hero = () => {
       </div>
 
       {/* Left Column */}
-      <div className="column1 flex h-fit flex-col justify-center px-6 md:h-full md:w-[50%] md:px-8">
+      <div className="column1 flex h-fit flex-col justify-center px-6 md:h-full md:w-[50%] md:pl-8">
         <div className="hi font-primary text-3xl text-white md:text-5xl">
           Hi, I&apos;m
         </div>
@@ -198,7 +198,7 @@ const Hero = () => {
         </div>
 
         <div className="description font-secondary text-base font-normal text-white md:text-lg">
-          A Front‑End Developer crafting modern, responsive websites with clean,
+          I create modern, responsive websites with clean,
           efficient code, and intuitive design. Constantly exploring emerging
           technologies and innovative approaches to push the boundaries of web
           development.
@@ -254,6 +254,7 @@ const Hero = () => {
       </div>
 
       <div className="section absolute right-0 bottom-20 mx-6 max-w-xl">
+        <p className="tracking-[2px] font-secondary uppercase text-white">experience</p>
         <div className="font-primary text-xl tracking-widest text-(--grey) md:text-5xl">
           2024-2025
         </div>
@@ -266,7 +267,7 @@ const Hero = () => {
 
         <div className="font-secondary text-sm font-normal text-white md:text-base">
           Designed and developed 6+ responsive websites, apps, and custom
-          software solutions that met each client’s goals and time constraints.
+          software solutions that met each client’s goals, budget, and time constraints.
         </div>
       </div>
     </div>
