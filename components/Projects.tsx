@@ -24,6 +24,16 @@ const Projects = () => {
 
   const projects = {
     project1: {
+      title: "Clothing E-Commerce Website; design from Figma Community",
+      description:
+        "Built the front-end of an e-commerce website from a Figma UI design.",
+      stack: "React + Vite, TailwindCSS",
+      image: "/clothing-ecommerce.jpg",
+      tags: "Concept",
+      preview: "https://clothing-ecommerce-ashdev.vercel.app",
+      github: "https://github.com/trishacapitle/clothing-ecommerce-frontend",
+    },
+    project2: {
       title: "Digital Tour Guide System for an Electric Vehicle Prototype",
       description:
         "A digital tour guide solution of a touring electric shuttle prototype that automatically narrates destination highlights and synchronized slideshow presentations based on geofence triggers, and real-time location tracking.",
@@ -33,7 +43,7 @@ const Projects = () => {
       tags: "Contract",
       github: "https://github.com/trishacapitle/digital-tour-guide-system",
     },
-    project2: {
+    project3: {
       title:
         "Battery and Solar Monitoring System with Custom Android App Syncing",
       description:
@@ -41,16 +51,6 @@ const Projects = () => {
       stack: "Electron, React + Vite, React Native, TailwindCSS",
       image: "/battery-solar-monitor.jpg",
       tags: "Contract",
-    },
-    project3: {
-      title: "Clothing E-Commerce Website; design from Figma Community",
-      description:
-        "Built the front-end of an e-commerce website from a Figma UI design.",
-      stack: "React + Vite, TailwindCSS",
-      image: "/clothing-ecommerce.jpg",
-      tags: "Concept",
-      preview: "https://clothing-ecommerce-ashdev.vercel.app",
-      github: "https://github.com/trishacapitle/clothing-ecommerce-frontend",
     },
     project4: {
       title: "AWWWARDS Web Animations",
