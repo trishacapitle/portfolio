@@ -15,7 +15,7 @@ const TechStack = () => {
     "react",
     "next",
     "tailwind",
-    "shadcn",
+    // "shadcn",
     "electron",
     "vite",
     "vitest",
@@ -24,7 +24,7 @@ const TechStack = () => {
     "vercel",
     "figma",
     "webflow",
-    "shopify",
+    // "shopify",
   ];
 
   gsap.registerPlugin(useGSAP, ScrollTrigger);
