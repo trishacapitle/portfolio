@@ -15,8 +15,6 @@ import Button from "./ui/Button";
 import emailjs from "@emailjs/browser";
 import Modal from "./ui/Modal";
 
-
-
 const Contact = () => {
   gsap.registerPlugin(useGSAP, ScrollTrigger);
   useGSAP(() => {
@@ -56,7 +54,7 @@ const Contact = () => {
 
   const sendEmail = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    
+
     setShowModal(true);
 
     if (form.current) {
@@ -67,7 +65,6 @@ const Contact = () => {
         .then(
           () => {
             console.log("SUCCESS!");
-            
           },
           (error) => {
             console.log("FAILED...", error.text);
@@ -95,13 +92,13 @@ const Contact = () => {
                 </span>
               </p>
               <div className="flex gap-4">
-                <a href="">
+                <a href="https://www.linkedin.com/in/trishacapitle">
                   <BiLogoLinkedin
                     size={30}
                     className="duration-200 ease-in-out hover:scale-110"
                   />
                 </a>
-                <a href="">
+                <a href="https://github.com/trishacapitle">
                   <BiLogoGithub
                     size={30}
                     className="duration-200 ease-in-out hover:scale-110"
@@ -170,7 +167,7 @@ const Contact = () => {
             </Modal>
           </form>
         </div>
-        <div className="footer p-6 text-tiny md:text-sm">
+        <div className="footer text-tiny p-6 md:text-sm">
           <hr className="mb-4 border border-(--grey)" />
           <p className="font-secondary text-center text-(--grey)">
             Designed in <span className="text-white">Figma</span>, coded on{" "}

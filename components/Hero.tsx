@@ -17,7 +17,7 @@ const Hero = () => {
 
   useGSAP(() => {
     const tl = gsap.timeline();
-    const letters = document.querySelectorAll(".loader-text span")
+    const letters = document.querySelectorAll(".loader-text span");
 
     tl.to(letters, {
       duration: 0.8,
@@ -41,7 +41,7 @@ const Hero = () => {
         ease: "power2.in",
       })
       .to(
-        (".loader"),
+        ".loader",
         {
           y: -100,
           opacity: 0,
@@ -168,8 +168,8 @@ const Hero = () => {
   return (
     <div className="hero relative flex h-screen w-full flex-col justify-center md:flex-row">
       {/* Loader */}
-      <div className="loader absolute -top-16 z-99 flex h-screen w-screen items-center justify-center bg-[#121212] ">
-        <div className="loader-text font-primary text-white/20 text-[6.5rem] overflow-hidden leading-none tracking-wider">
+      <div className="loader absolute -top-16 z-99 flex h-screen w-screen items-center justify-center bg-[#121212]">
+        <div className="loader-text font-primary overflow-hidden text-[6.5rem] leading-none tracking-wider text-white/20">
           <span data-text="A">A</span>
           <span data-text="S">S</span>
           <span data-text="H">H</span>
@@ -198,10 +198,9 @@ const Hero = () => {
         </div>
 
         <div className="description font-secondary text-base font-normal text-white md:text-lg">
-          I create modern, responsive websites with clean,
-          efficient code, and intuitive design. Constantly exploring emerging
-          technologies and innovative approaches to push the boundaries of web
-          development.
+          I create modern, responsive websites with clean, efficient code, and
+          intuitive design. Constantly exploring emerging technologies and
+          innovative approaches to push the boundaries of web development.
         </div>
 
         <div className="actions mt-4 flex items-center gap-2 md:gap-3">
@@ -212,7 +211,7 @@ const Hero = () => {
           />
           <a
             className="button duration-200 ease-in-out hover:scale-110"
-            href="https://www.linkedin.com/in/trisha-capitle/"
+            href="https://www.linkedin.com/in/trishacapitle/"
             target="_blank"
             rel="noopener noreferrer"
           >
@@ -254,7 +253,9 @@ const Hero = () => {
       </div>
 
       <div className="section absolute right-0 bottom-20 mx-6 max-w-xl">
-        <p className="tracking-[2px] font-secondary uppercase text-white">experience</p>
+        <p className="font-secondary tracking-[2px] text-white uppercase">
+          experience
+        </p>
         <div className="font-primary text-xl tracking-widest text-(--grey) md:text-5xl">
           2024-2025
         </div>
@@ -267,7 +268,8 @@ const Hero = () => {
 
         <div className="font-secondary text-sm font-normal text-white md:text-base">
           Designed and developed 6+ responsive websites, apps, and custom
-          software solutions that met each client’s goals, budget, and time constraints.
+          software solutions that met each client’s goals, budget, and time
+          constraints.
         </div>
       </div>
     </div>
