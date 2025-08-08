@@ -238,7 +238,7 @@ const Hero = () => {
           draggable={false}
           className="ashdev absolute bottom-0 h-full w-full object-cover"
         />
-        <a href="/resume.pdf" download>
+        <a href="/TrishaCapitle_RESUME.pdf" download>
           <Button
             className="resume absolute bottom-30 left-1/2 w-fit -translate-x-1/2 text-2xl md:text-3xl"
             title="Resume"
