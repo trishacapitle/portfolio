@@ -1,4 +1,4 @@
-import { useEffect } from 'react'
+import { useEffect } from "react";
 
 const Cursor = () => {
   useEffect(() => {
@@ -29,7 +29,10 @@ const Cursor = () => {
         c.x = x;
         c.y = y;
 
-        const nextCircle = (circles[index + 1] || circles[0]) as HTMLElement & { x: number; y: number };
+        const nextCircle = (circles[index + 1] || circles[0]) as HTMLElement & {
+          x: number;
+          y: number;
+        };
         x += (nextCircle.x - x) * 0.3;
         y += (nextCircle.y - y) * 0.3;
       });
@@ -38,7 +41,7 @@ const Cursor = () => {
     }
 
     animateCircles();
-})
+  });
 
   return (
     <>
@@ -74,6 +77,6 @@ const Cursor = () => {
       <div id="custom-cursor" className="custom-cursor"></div>
     </>
   );
-}
+};
 
-export default Cursor
+export default Cursor;

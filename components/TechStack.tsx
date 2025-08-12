@@ -45,7 +45,7 @@ const TechStack = () => {
       duration: 1,
       ease: "power1.in",
       stagger: 0.1,
-      y:0,
+      y: 0,
     });
 
     gsap.to(".subtitle", {
@@ -69,7 +69,7 @@ const TechStack = () => {
     });
   });
   return (
-    <div className="stack relative flex h-fit w-full flex-col lg:h-screen my-20">
+    <div className="stack relative my-20 flex h-fit w-full flex-col lg:h-screen">
       <div className="title font-primary px-6 py-6 text-6xl text-white md:px-8 md:pt-8">
         <span className="text-(--grey)">Tech</span> Stack
       </div>

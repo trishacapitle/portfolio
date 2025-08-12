@@ -3,7 +3,6 @@ import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
 
-
 const Projects = () => {
   gsap.registerPlugin(useGSAP, ScrollTrigger);
 
@@ -17,10 +16,10 @@ const Projects = () => {
       },
       stagger: 0.5,
       y: 100,
-      scale: 0.70,
+      scale: 0.7,
       opacity: 0,
-  })
-})
+    });
+  });
 
   const projects = {
     project1: {
@@ -80,12 +79,11 @@ const Projects = () => {
         <span className="text-(--grey)">Featured</span> Projects
       </div>
       <div className="card-container flex w-full flex-col items-center gap-4">
-          {Object.entries(projects).map(([key, project]) => (
-            <div className="cards" key={key}>
-              <ProjectCard {...project} />
-            </div>
-          ))}
-        
+        {Object.entries(projects).map(([key, project]) => (
+          <div className="cards" key={key}>
+            <ProjectCard {...project} />
+          </div>
+        ))}
       </div>
     </div>
   );

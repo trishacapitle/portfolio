@@ -18,8 +18,8 @@ export const metadata: Metadata = {
   title: "AshDev",
   description: "Portfolio",
   icons: {
-    icon: ["/ashdev.svg",]
-  }
+    icon: ["/ashdev.svg"],
+  },
 };
 
 export default function RootLayout({
@@ -29,9 +29,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body
-        className={`${bebasNeue.variable} ${poppins.variable} antialiased`}
-      >
+      <body className={`${bebasNeue.variable} ${poppins.variable} antialiased`}>
         {children}
       </body>
     </html>
