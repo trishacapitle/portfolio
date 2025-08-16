@@ -16,6 +16,34 @@ const Hero = () => {
   gsap.registerPlugin(useGSAP, ScrollTrigger);
 
   useGSAP(() => {
+    const lockScroll = () => {
+      if (typeof window === "undefined") return;
+      const scrollY = window.scrollY || 0;
+      document.body.dataset.scrollY = String(scrollY);
+      document.body.style.position = "fixed";
+      document.body.style.top = `-${scrollY}px`;
+      document.body.style.left = "0";
+      document.body.style.right = "0";
+      document.body.style.overflow = "hidden";
+    };
+
+    const unlockScroll = () => {
+      if (typeof window === "undefined") return;
+      const stored = document.body.dataset.scrollY;
+      document.body.style.position = "";
+      document.body.style.top = "";
+      document.body.style.left = "";
+      document.body.style.right = "";
+      document.body.style.overflow = "";
+      if (stored) {
+        const scrollY = parseInt(stored, 10);
+        window.scrollTo(0, scrollY);
+        delete document.body.dataset.scrollY;
+      }
+    };
+
+    lockScroll();
+
     const tl = gsap.timeline();
     const letters = document.querySelectorAll(".loader-text span");
 
@@ -48,6 +76,7 @@ const Hero = () => {
           duration: 0.7,
           ease: "power2.inOut",
           pointerEvents: "none",
+          onComplete: unlockScroll,
         },
         "-=0.3",
       )
@@ -156,7 +185,7 @@ const Hero = () => {
           opacity: 1,
           duration: 3,
           ease: "power2.in",
-          y: -120,
+          y: -100,
         },
         "-=1",
       )
@@ -258,6 +287,9 @@ const Hero = () => {
         </p>
         <div className="font-primary text-xl tracking-widest text-(--grey) md:text-5xl">
           2024-2025
+        </div>
+        <div className="jobTitle font-primary text-8xl tracking-wide text-white">
+          Front-End <span className="text-(--grey)">/</span>
         </div>
         <div className="jobTitle font-primary text-8xl tracking-wide text-white">
           Full-Stack <span className="text-(--grey)">Developer</span>
