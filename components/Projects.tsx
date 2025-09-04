@@ -27,7 +27,8 @@ const Projects = () => {
       description:
         "Built the front-end of an e-commerce website from a Figma UI design.",
       stack: "React + Vite, TailwindCSS",
-      image: "/clothing-ecommerce.jpg",
+      // image: "/clothing-ecommerce.jpg",
+      video: "/shopco.webm",
       tags: "Concept",
       preview: "https://clothing-ecommerce-ashdev.vercel.app",
       github: "https://github.com/trishacapitle/clothing-ecommerce-frontend",
@@ -56,7 +57,8 @@ const Projects = () => {
       description:
         "Compiled recreations of GSAP animations in React from award-winning websites.",
       stack: "React + Vite, GSAP",
-      image: "/web-animations.jpg",
+      // image: "/web-animations.jpg",
+      video: "/gsap.webm",
       tags: "Concept",
       preview: "https://awwwards-animations.vercel.app",
       github: "https://github.com/trishacapitle/awwwards-animations",
