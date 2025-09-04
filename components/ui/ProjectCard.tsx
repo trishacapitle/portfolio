@@ -5,24 +5,31 @@ interface ProjectCardProps {
   title: string;
   description: string;
   stack: string;
-  image: string;
+  image?: string | null;
+  video?: string;
   tags: string;
   preview?: string | null;
   github?: string | null;
 }
 
 const ProjectCard = (project: ProjectCardProps) => {
-  const { title, description, stack, image, tags, preview, github } = project;
+  const { title, description, stack, image, video, tags, preview, github } = project;
 
   return (
     <div className="font-secondary flex h-fit w-[90vw] max-w-3xl flex-col items-center justify-center gap-4 rounded-xl border border-gray-500 bg-gray-600/25 p-6 text-white backdrop-blur-sm backdrop-filter transition-colors duration-300 hover:bg-gray-400/25 md:flex-row">
-      <div className="relative h-100 w-full rounded-xl bg-[#1A1A1A] md:w-100">
-        <Image
-          src={image}
-          alt={`${title} preview`}
-          fill
-          className="object-contain"
-        />
+      <div className="relative h-100 w-full rounded-xl bg-[#1A1A1A] md:w-100 flex items-center">
+        {image == null ? (
+          <video autoPlay loop muted>
+            <source src={video} type="video/webm" />
+          </video>
+        ) : (
+          <Image
+            src={image}
+            alt={`${title} preview`}
+            fill
+            className="object-contain"
+          />
+        )}
         <p className="text-tiny absolute top-2 left-2 rounded-full bg-[#0A0A0A] p-2">
           {tags}
         </p>
